@@ -1,0 +1,29 @@
+{
+    "name": "clippedcode/gogs-client",
+    "description": "GOGS (GO GIT SERVER) API Client written in PHP for Consuming APIs of GOGS Server.",
+    "type": "package",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Shashwat Mishra",
+            "email": "shashwat9630@gmail.com"
+        },
+        {
+            "name": "Joachim M. Giaever",
+            "email": "joachim@giaever.org"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support" : "~5"
+    },
+    "require-dev": {
+        "guzzlehttp/guzzle": "^6.2"
+    },
+    "autoload": {
+    	"psr-4": {
+    		"Clippedcode\\Gogs\\": "src/"
+    	}
+    },
+    "minimum-stability": "dev"
+}
