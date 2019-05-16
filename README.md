@@ -1,4 +1,4 @@
-# GOGS API CLIENT
+# GIT API CLIENT
 
 **Current Status: `ALPHA.1`**
 
