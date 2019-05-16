@@ -1,6 +1,6 @@
 <?php
 
-namespace Gogs\API\Request {
+namespace Clippedcode\GitClient\API\Request {
 
     /** 
      * Holds a collection of Branches for a Repository.

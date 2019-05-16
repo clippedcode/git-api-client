@@ -1,5 +1,5 @@
 <?php
-namespace Gogs\API\Request\Exception {
+namespace Clippedcode\GitClient\API\Request\Exception {
     /** 
      * Thrown when the requested method for a class isn't
      * implemented.

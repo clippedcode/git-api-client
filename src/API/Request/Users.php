@@ -1,6 +1,6 @@
 <?php 
 
-namespace Gogs\API\Request {
+namespace Clippedcode\GitClient\API\Request {
     /** 
      * Returns one or more users in the Gogs installation, 
      * depending on the called method. 

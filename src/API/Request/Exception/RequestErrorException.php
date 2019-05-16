@@ -1,5 +1,5 @@
 <?php
-namespace Gogs\API\Request\Exception {
+namespace Clippedcode\GitClient\API\Request\Exception {
     /** 
      * Typically thrown when needed data to build the query
      * is missing.

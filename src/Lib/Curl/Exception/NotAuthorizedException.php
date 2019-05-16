@@ -1,6 +1,6 @@
 <?php 
 
-namespace Gogs\Lib\Curl\Exception {
+namespace Clippedcode\GitClient\Lib\Curl\Exception {
 
     /** 
      * When the request fails because of an unauthorized token,

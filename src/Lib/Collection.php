@@ -1,6 +1,6 @@
 <?php
 
-namespace Gogs\Lib {
+namespace Clippedcode\GitClient\Lib {
 
     /** 
      * Base class for collections. Implements basic

@@ -1,6 +1,6 @@
 <?php 
 
-namespace Gogs\API {
+namespace Clippedcode\GitClient\API {
 
     /** 
      * Gogs API client. 
@@ -15,7 +15,7 @@ namespace Gogs\API {
      */
 
     final class Client {
-        use \Gogs\Lib\Curl\Client;
+        use \Clippedcode\GitClient\Lib\Curl\Client;
         const VERSION = 0.1;
 
         /** 

@@ -1,7 +1,7 @@
 <?php
-namespace Clippedcode\Gogs;
+namespace Clippedcode\GitClient;
 
-use Clippedcode\Gogs\API\Client;
+use Clippedcode\GitClient\API\Client;
 
 class Gogs {
     

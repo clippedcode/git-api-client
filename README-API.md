@@ -1,63 +1,63 @@
 
-Gogs PHP API Client
+git PHP API Client
 ===
 
 # Table of content    
-1. [Gogs](#gogs "Gogs")
-	1. [API](#gogsapi "Gogs\API")
-		1. [Request](#gogsapirequest "Gogs\API\Request")
-			1. [Base](#base-gogsapirequest "Gogs\API\Request\Base") Base class for request types.
-			2. [Branch](#branch-gogsapirequest "Gogs\API\Request\Branch") A single Branch
-			3. [Branches](#branches-gogsapirequest "Gogs\API\Request\Branches") Holds a collection of Branches for a Repository.
-			4. [Collection](#collection-gogsapirequest "Gogs\API\Request\Collection") Collection is a collection of data of one type.
-			5. [Exception](#gogsapirequestexception "Gogs\API\Request\Exception")
-				1. [InvalidMethodRequestException](#invalidmethodrequestexception-gogsapirequestexception "Gogs\API\Request\Exception\InvalidMethodRequestException") Thrown whenever a class that inherits the base-classis used wrong (e.g tries to create on a loaded object)
-				2. [NotImplementedException](#notimplementedexception-gogsapirequestexception "Gogs\API\Request\Exception\NotImplementedException") Thrown when the requested method for a class isn'timplemented.
-				3. [RequestErrorException](#requesterrorexception-gogsapirequestexception "Gogs\API\Request\Exception\RequestErrorException") Typically thrown when needed data to build the queryis missing.
-				4. [SearchParamException](#searchparamexception-gogsapirequestexception "Gogs\API\Request\Exception\SearchParamException") Thrown when needed parameters for a search is missing.
-			6. [Org](#org-gogsapirequest "Gogs\API\Request\Org") Stores data and methods related to a single organization.
-			7. [Orgs](#orgs-gogsapirequest "Gogs\API\Request\Orgs") Orgs is a collection of organizations.
-			8. [Repo](#repo-gogsapirequest "Gogs\API\Request\Repo") Stores data and methods related to a single repository.
-			9. [Repos](#repos-gogsapirequest "Gogs\API\Request\Repos") Repos is a collection of repos.
-			10. [RequestInterface](#requestinterface-gogsapirequest "Gogs\API\Request\RequestInterface") Request interface, used by any kind of request object.
-			11. [Token](#token-gogsapirequest "Gogs\API\Request\Token") A token related to a user
-			12. [Tokens](#tokens-gogsapirequest "Gogs\API\Request\Tokens") Collection of tokens for a given user.
-			13. [User](#user-gogsapirequest "Gogs\API\Request\User") Stores user data and methods related to a single user.
-			14. [Users](#users-gogsapirequest "Gogs\API\Request\Users") Returns one or more users in the Gogs installation,depending on the called method.
-		2. [Client](#client-gogsapi "Gogs\API\Client") Gogs API client.
-	2. [Lib](#gogslib "Gogs\Lib")
-		1. [Curl](#gogslibcurl "Gogs\Lib\Curl")
-			1. [Client](#client-gogslibcurl "Gogs\Lib\Curl\Client") A trait used for every class referencing the api-url and token.
-			2. [Exception](#gogslibcurlexception "Gogs\Lib\Curl\Exception")
-				1. [HTTPUnexpectedResponse](#httpunexpectedresponse-gogslibcurlexception "Gogs\Lib\Curl\Exception\HTTPUnexpectedResponse") Defines an unexpected response.
-				2. [NotAuthorizedException](#notauthorizedexception-gogslibcurlexception "Gogs\Lib\Curl\Exception\NotAuthorizedException") When the request fails because of an unauthorized token,this is thrown instead.
-		2. [ArrayIterator](#arrayiterator-gogslib "Gogs\Lib\ArrayIterator") Interface to store one or more elements in arrayproviding an iterator interface.
-		3. [Collection](#collection-gogslib "Gogs\Lib\Collection") Base class for collections. Implements basicfunctions and typically used to return collectionswhich wont be a part of the "request package"
+1. [git](#git "git")
+	1. [API](#gitapi "git\API")
+		1. [Request](#gitapirequest "git\API\Request")
+			1. [Base](#base-gitapirequest "git\API\Request\Base") Base class for request types.
+			2. [Branch](#branch-gitapirequest "git\API\Request\Branch") A single Branch
+			3. [Branches](#branches-gitapirequest "git\API\Request\Branches") Holds a collection of Branches for a Repository.
+			4. [Collection](#collection-gitapirequest "git\API\Request\Collection") Collection is a collection of data of one type.
+			5. [Exception](#gitapirequestexception "git\API\Request\Exception")
+				1. [InvalidMethodRequestException](#invalidmethodrequestexception-gitapirequestexception "git\API\Request\Exception\InvalidMethodRequestException") Thrown whenever a class that inherits the base-classis used wrong (e.g tries to create on a loaded object)
+				2. [NotImplementedException](#notimplementedexception-gitapirequestexception "git\API\Request\Exception\NotImplementedException") Thrown when the requested method for a class isn'timplemented.
+				3. [RequestErrorException](#requesterrorexception-gitapirequestexception "git\API\Request\Exception\RequestErrorException") Typically thrown when needed data to build the queryis missing.
+				4. [SearchParamException](#searchparamexception-gitapirequestexception "git\API\Request\Exception\SearchParamException") Thrown when needed parameters for a search is missing.
+			6. [Org](#org-gitapirequest "git\API\Request\Org") Stores data and methods related to a single organization.
+			7. [Orgs](#orgs-gitapirequest "git\API\Request\Orgs") Orgs is a collection of organizations.
+			8. [Repo](#repo-gitapirequest "git\API\Request\Repo") Stores data and methods related to a single repository.
+			9. [Repos](#repos-gitapirequest "git\API\Request\Repos") Repos is a collection of repos.
+			10. [RequestInterface](#requestinterface-gitapirequest "git\API\Request\RequestInterface") Request interface, used by any kind of request object.
+			11. [Token](#token-gitapirequest "git\API\Request\Token") A token related to a user
+			12. [Tokens](#tokens-gitapirequest "git\API\Request\Tokens") Collection of tokens for a given user.
+			13. [User](#user-gitapirequest "git\API\Request\User") Stores user data and methods related to a single user.
+			14. [Users](#users-gitapirequest "git\API\Request\Users") Returns one or more users in the git installation,depending on the called method.
+		2. [Client](#client-gitapi "git\API\Client") git API client.
+	2. [Lib](#gitlib "git\Lib")
+		1. [Curl](#gitlibcurl "git\Lib\Curl")
+			1. [Client](#client-gitlibcurl "git\Lib\Curl\Client") A trait used for every class referencing the api-url and token.
+			2. [Exception](#gitlibcurlexception "git\Lib\Curl\Exception")
+				1. [HTTPUnexpectedResponse](#httpunexpectedresponse-gitlibcurlexception "git\Lib\Curl\Exception\HTTPUnexpectedResponse") Defines an unexpected response.
+				2. [NotAuthorizedException](#notauthorizedexception-gitlibcurlexception "git\Lib\Curl\Exception\NotAuthorizedException") When the request fails because of an unauthorized token,this is thrown instead.
+		2. [ArrayIterator](#arrayiterator-gitlib "git\Lib\ArrayIterator") Interface to store one or more elements in arrayproviding an iterator interface.
+		3. [Collection](#collection-gitlib "git\Lib\Collection") Base class for collections. Implements basicfunctions and typically used to return collectionswhich wont be a part of the "request package"
 
 
 ---
 Documentation
 ---
 
-# Gogs
+# git
 
- * [Gogs\API](#gogsapi "Namespace: Gogs\API")
- * [Gogs\API\Request](#gogsapirequest "Namespace: Gogs\API\Request")
- * [Gogs\API\Request\Exception](#gogsapirequestexception "Namespace: Gogs\API\Request\Exception")
- * [Gogs\Lib](#gogslib "Namespace: Gogs\Lib")
- * [Gogs\Lib\Curl](#gogslibcurl "Namespace: Gogs\Lib\Curl")
- * [Gogs\Lib\Curl\Exception](#gogslibcurlexception "Namespace: Gogs\Lib\Curl\Exception")
+ * [git\API](#gitapi "Namespace: git\API")
+ * [git\API\Request](#gitapirequest "Namespace: git\API\Request")
+ * [git\API\Request\Exception](#gitapirequestexception "Namespace: git\API\Request\Exception")
+ * [git\Lib](#gitlib "Namespace: git\Lib")
+ * [git\Lib\Curl](#gitlibcurl "Namespace: git\Lib\Curl")
+ * [git\Lib\Curl\Exception](#gitlibcurlexception "Namespace: git\Lib\Curl\Exception")
 
-# Gogs\API
+# git\API
 
 ## Classes
 
-### Client `Gogs\API`
+### Client `git\API`
 
 
-* Class uses [Gogs\Lib\Curl\Client](#client-gogslibcurl)
+* Class uses [git\Lib\Curl\Client](#client-gitlibcurl)
 
-Gogs API client.
+git API client.
 
 This class initially provide the programmer with a starting
 point (a kind of an "interface" to start from), to keep
@@ -68,15 +68,15 @@ organization etc.
 
 |Name                                     |Return                        |Access|Description                                                                      |
 |:---                                     |:---                          |:---  |:---                                                                             |
-|[__construct](#__construct-gogsapiclient)|                              |public|                                                                                 |
-|[users](#users-gogsapiclient)            |[Users](#users-gogsapirequest)|public| Returns a Request\Users to fetch users from theGogs installation.               |
-|[user](#user-gogsapiclient)              |[User](#user-gogsapirequest)  |public| Get a single user from Gogs.                                                    |
-|[repos](#repos-gogsapiclient)            |[Repos](#repos-gogsapirequest)|public| Returns an \Request\Repos to fetch repositorieson the Gogs installation.        |
-|[get_log](#get_log-gogsapiclient)        |array                         |public| A wrapper function as get_log on Client wontreturn anything. This is bogus, but.|
+|[__construct](#__construct-gitapiclient)|                              |public|                                                                                 |
+|[users](#users-gitapiclient)            |[Users](#users-gitapirequest)|public| Returns a Request\Users to fetch users from thegit installation.               |
+|[user](#user-gitapiclient)              |[User](#user-gitapirequest)  |public| Get a single user from git.                                                    |
+|[repos](#repos-gitapiclient)            |[Repos](#repos-gitapirequest)|public| Returns an \Request\Repos to fetch repositorieson the git installation.        |
+|[get_log](#get_log-gitapiclient)        |array                         |public| A wrapper function as get_log on Client wontreturn anything. This is bogus, but.|
 
 #### Method details
 
-##### __construct `Gogs\API\Client`
+##### __construct `git\API\Client`
 ```php
 public function __construct(string $api_url, string $api_token);
 ```
@@ -85,29 +85,29 @@ Parameters
 
 | Type | Variable | Description                                                     |
 |---   |---       |---                                                              |
-|string|$api_url  |The base URL for the Gogs API (e.g https://git.domain.tld/api/v1)|
-|string|$api_token|The token for an authorized user to query Gogs API.              |
+|string|$api_url  |The base URL for the git API (e.g https://git.domain.tld/api/v1)|
+|string|$api_token|The token for an authorized user to query git API.              |
 ---
 
 
-##### users `Gogs\API\Client`
+##### users `git\API\Client`
 ```php
 public function users();
 ```
  Returns a Request\Users to fetch users from the
-Gogs installation.
+git installation.
 
 
-Returns: [Users](#users-gogsapirequest)
+Returns: [Users](#users-gitapirequest)
 
 ---
 
 
-##### user `Gogs\API\Client`
+##### user `git\API\Client`
 ```php
 public function user(string $name = "me");
 ```
- Get a single user from Gogs.
+ Get a single user from git.
 
 Returns either
 * the authorized user ($name = "" or "me")
@@ -120,25 +120,25 @@ Parameters
 |---   |---       |---          |
 |string|$name     |*None*       |
 
-Returns: [User](#user-gogsapirequest)
+Returns: [User](#user-gitapirequest)
 
 ---
 
 
-##### repos `Gogs\API\Client`
+##### repos `git\API\Client`
 ```php
 public function repos();
 ```
  Returns an \Request\Repos to fetch repositories
-on the Gogs installation.
+on the git installation.
 
 
-Returns: [Repos](#repos-gogsapirequest)
+Returns: [Repos](#repos-gitapirequest)
 
 ---
 
 
-##### get_log `Gogs\API\Client`
+##### get_log `git\API\Client`
 ```php
 public function get_log();
 ```
@@ -153,15 +153,15 @@ Returns: array
 
 ---
 
-# Gogs\API\Request
+# git\API\Request
 
 ## Classes
 
-### Base `Gogs\API\Request`
+### Base `git\API\Request`
 
 
-* Class implements[Gogs\API\Request\RequestInterface](#requestinterface-gogsapirequest)
-* Class uses [Gogs\Lib\Curl\Client](#client-gogslibcurl)
+* Class implements[git\API\Request\RequestInterface](#requestinterface-gitapirequest)
+* Class uses [git\Lib\Curl\Client](#client-gitlibcurl)
 
 Base class for request types.
 
@@ -173,29 +173,29 @@ and get the cURL functionality.
 
 |Name                                                      |Return                                       |Access            |Description                                                     |
 |:---                                                      |:---                                         |:---              |:---                                                            |
-|[__construct](#__construct-gogsapirequestbase)            |                                             |public            |                                                                |
-|[load](#load-gogsapirequestbase)                          |object                                       |final public      | Load an object.                                                |
-|[method_get](#method_get-gogsapirequestbase)              |string                                       |final protected   | Perform a GET-request against the Gogs API.                    |
-|[method_post](#method_post-gogsapirequestbase)            |string                                       |final protected   | Perform a POST-request against the Gogs API.                   |
-|[method_delete](#method_delete-gogsapirequestbase)        |string                                       |final protected   | Perform a DELETE-request against the Gogs API.                 |
-|[get](#get-gogsapirequestbase)                            |object                                       |public            | Get object references by identifier.                           |
-|[create](#create-gogsapirequestbase)                      |bool                                         |public            | Create object inherited by class.                              |
-|[patch](#patch-gogsapirequestbase)                        |bool                                         |public            | Patch (update) object                                          |
-|[delete](#delete-gogsapirequestbase)                      |bool                                         |public            | Delete object.                                                 |
-|[json_decode](#json_decode-gogsapirequestbase)            |object                                       |final protected   | Decode JSON-string.                                            |
-|[json_encode](#json_encode-gogsapirequestbase)            |string                                       |final protected   | Encode JSON-object/array.                                      |
-|[json_error](#json_error-gogsapirequestbase)              |                                             |final protected   | Check for errors on encoding/decoding.                         |
-|[json_set_property](#json_set_property-gogsapirequestbase)|[true](#true-gogsapirequest) ***v*** array   |protected         | Set properties for the current object.                         |
-|[property_exists](#property_exists-gogsapirequestbase)    |string ***v*** [false](#false-gogsapirequest)|final protected   | Checks if the property (key) exists within selfor parent class.|
-|[__get](#__get-gogsapirequestbase)                        |mixed ***v*** null                           |final public      | Get property by name.                                          |
-|[__set](#__set-gogsapirequestbase)                        |mixed ***v*** null                           |final public      | Set property by name.                                          |
-|[__isset](#__isset-gogsapirequestbase)                    |bool                                         |final public      | Checks if property is set.                                     |
-|[set_scope](#set_scope-gogsapirequestbase)                |bool                                         |abstract protected| Set the scope for the request methods accepted by the child.   |
-|[search](#search-gogsapirequestbase)                      |[true](#true-gogsapirequest)                 |protected         | Search for an matching object.                                 |
+|[__construct](#__construct-gitapirequestbase)            |                                             |public            |                                                                |
+|[load](#load-gitapirequestbase)                          |object                                       |final public      | Load an object.                                                |
+|[method_get](#method_get-gitapirequestbase)              |string                                       |final protected   | Perform a GET-request against the git API.                    |
+|[method_post](#method_post-gitapirequestbase)            |string                                       |final protected   | Perform a POST-request against the git API.                   |
+|[method_delete](#method_delete-gitapirequestbase)        |string                                       |final protected   | Perform a DELETE-request against the git API.                 |
+|[get](#get-gitapirequestbase)                            |object                                       |public            | Get object references by identifier.                           |
+|[create](#create-gitapirequestbase)                      |bool                                         |public            | Create object inherited by class.                              |
+|[patch](#patch-gitapirequestbase)                        |bool                                         |public            | Patch (update) object                                          |
+|[delete](#delete-gitapirequestbase)                      |bool                                         |public            | Delete object.                                                 |
+|[json_decode](#json_decode-gitapirequestbase)            |object                                       |final protected   | Decode JSON-string.                                            |
+|[json_encode](#json_encode-gitapirequestbase)            |string                                       |final protected   | Encode JSON-object/array.                                      |
+|[json_error](#json_error-gitapirequestbase)              |                                             |final protected   | Check for errors on encoding/decoding.                         |
+|[json_set_property](#json_set_property-gitapirequestbase)|[true](#true-gitapirequest) ***v*** array   |protected         | Set properties for the current object.                         |
+|[property_exists](#property_exists-gitapirequestbase)    |string ***v*** [false](#false-gitapirequest)|final protected   | Checks if the property (key) exists within selfor parent class.|
+|[__get](#__get-gitapirequestbase)                        |mixed ***v*** null                           |final public      | Get property by name.                                          |
+|[__set](#__set-gitapirequestbase)                        |mixed ***v*** null                           |final public      | Set property by name.                                          |
+|[__isset](#__isset-gitapirequestbase)                    |bool                                         |final public      | Checks if property is set.                                     |
+|[set_scope](#set_scope-gitapirequestbase)                |bool                                         |abstract protected| Set the scope for the request methods accepted by the child.   |
+|[search](#search-gitapirequestbase)                      |[true](#true-gitapirequest)                 |protected         | Search for an matching object.                                 |
 
 #### Method details
 
-##### __construct `Gogs\API\Request\Base`
+##### __construct `git\API\Request\Base`
 ```php
 public function __construct(string $api_url, string $api_token);
 ```
@@ -209,14 +209,14 @@ Parameters
 ---
 
 
-##### load `Gogs\API\Request\Base`
+##### load `git\API\Request\Base`
 ```php
 final public function load(bool $force = false);
 ```
  Load an object.
 
 If `$force = true` the object will be fetched
-from the Gogs API again.
+from the git API again.
 
 
 Parameters
@@ -229,16 +229,16 @@ Returns: object
 
 Throws: 
 
-* [NotImplementedException](#notimplementedexception-gogsapirequestexception "Exception: Gogs\API\Request\Exception\NotImplementedException")
+* [NotImplementedException](#notimplementedexception-gitapirequestexception "Exception: git\API\Request\Exception\NotImplementedException")
 
 ---
 
 
-##### method_get `Gogs\API\Request\Base`
+##### method_get `git\API\Request\Base`
 ```php
 final protected function method_get(array $params = array());
 ```
- Perform a GET-request against the Gogs API.
+ Perform a GET-request against the git API.
 
 Ensure the correct scope i set first, with
 ```php
@@ -257,11 +257,11 @@ Returns: string
 ---
 
 
-##### method_post `Gogs\API\Request\Base`
+##### method_post `git\API\Request\Base`
 ```php
 final protected function method_post(array $params = array());
 ```
- Perform a POST-request against the Gogs API.
+ Perform a POST-request against the git API.
 
 Ensure the correct scope i set first, with
 ```php
@@ -280,11 +280,11 @@ Returns: string
 ---
 
 
-##### method_delete `Gogs\API\Request\Base`
+##### method_delete `git\API\Request\Base`
 ```php
 final protected function method_delete();
 ```
- Perform a DELETE-request against the Gogs API.
+ Perform a DELETE-request against the git API.
 
 Ensure the correct scope i set first, with
 ```php
@@ -297,7 +297,7 @@ Returns: string
 ---
 
 
-##### get `Gogs\API\Request\Base`
+##### get `git\API\Request\Base`
 ```php
 public function get(string $s);
 ```
@@ -315,7 +315,7 @@ Returns: object
 ---
 
 
-##### create `Gogs\API\Request\Base`
+##### create `git\API\Request\Base`
 ```php
 public function create(... $args);
 ```
@@ -335,13 +335,13 @@ Returns: bool
 
 Throws: 
 
-* [InvalidMethodRequestException](#invalidmethodrequestexception-gogsapirequestexception "Exception: Gogs\API\Request\Exception\InvalidMethodRequestException")
-* [NotImplementedException](#notimplementedexception-gogsapirequestexception "Exception: Gogs\API\Request\Exception\NotImplementedException")
+* [InvalidMethodRequestException](#invalidmethodrequestexception-gitapirequestexception "Exception: git\API\Request\Exception\InvalidMethodRequestException")
+* [NotImplementedException](#notimplementedexception-gitapirequestexception "Exception: git\API\Request\Exception\NotImplementedException")
 
 ---
 
 
-##### patch `Gogs\API\Request\Base`
+##### patch `git\API\Request\Base`
 ```php
 public function patch();
 ```
@@ -352,13 +352,13 @@ Returns: bool
 
 Throws: 
 
-* [InvalidMethodRequestException](#invalidmethodrequestexception-gogsapirequestexception "Exception: Gogs\API\Request\Exception\InvalidMethodRequestException")
-* [NotImplementedException](#notimplementedexception-gogsapirequestexception "Exception: Gogs\API\Request\Exception\NotImplementedException")
+* [InvalidMethodRequestException](#invalidmethodrequestexception-gitapirequestexception "Exception: git\API\Request\Exception\InvalidMethodRequestException")
+* [NotImplementedException](#notimplementedexception-gitapirequestexception "Exception: git\API\Request\Exception\NotImplementedException")
 
 ---
 
 
-##### delete `Gogs\API\Request\Base`
+##### delete `git\API\Request\Base`
 ```php
 public function delete();
 ```
@@ -369,12 +369,12 @@ Returns: bool
 
 Throws: 
 
-* [NotImplementedException](#notimplementedexception-gogsapirequestexception "Exception: Gogs\API\Request\Exception\NotImplementedException")
+* [NotImplementedException](#notimplementedexception-gitapirequestexception "Exception: git\API\Request\Exception\NotImplementedException")
 
 ---
 
 
-##### json_decode `Gogs\API\Request\Base`
+##### json_decode `git\API\Request\Base`
 ```php
 final protected function json_decode(string $jenc);
 ```
@@ -394,7 +394,7 @@ Returns: object
 ---
 
 
-##### json_encode `Gogs\API\Request\Base`
+##### json_encode `git\API\Request\Base`
 ```php
 final protected function json_encode(iterable $jdec);
 ```
@@ -414,7 +414,7 @@ Returns: string
 ---
 
 
-##### json_error `Gogs\API\Request\Base`
+##### json_error `git\API\Request\Base`
 ```php
 final protected function json_error();
 ```
@@ -422,12 +422,12 @@ final protected function json_error();
 
 Throws: 
 
-* [RequestErrorException](#requesterrorexception-gogsapirequestexception "Exception: Gogs\API\Request\Exception\RequestErrorException")
+* [RequestErrorException](#requesterrorexception-gitapirequestexception "Exception: git\API\Request\Exception\RequestErrorException")
 
 ---
 
 
-##### json_set_property `Gogs\API\Request\Base`
+##### json_set_property `git\API\Request\Base`
 ```php
 protected function json_set_property(iterable $obj);
 ```
@@ -451,12 +451,12 @@ Parameters
 |---                                                                                                    |---       |---          |
 |[iterable](http://php.net/manual/en/functions.arguments.php#functions.arguments.type-declaration.types)|$obj      |*None*       |
 
-Returns: [true](#true-gogsapirequest) ***v*** array
+Returns: [true](#true-gitapirequest) ***v*** array
 
 ---
 
 
-##### property_exists `Gogs\API\Request\Base`
+##### property_exists `git\API\Request\Base`
 ```php
 final protected function property_exists(mixed $name);
 ```
@@ -483,12 +483,12 @@ Parameters
 |---   |---       |---             |
 |mixed|$name     |Name of the key.|
 
-Returns: string ***v*** [false](#false-gogsapirequest)
+Returns: string ***v*** [false](#false-gitapirequest)
 
 ---
 
 
-##### __get `Gogs\API\Request\Base`
+##### __get `git\API\Request\Base`
 ```php
 final public function __get(string $name);
 ```
@@ -511,7 +511,7 @@ Returns: mixed ***v*** null
 ---
 
 
-##### __set `Gogs\API\Request\Base`
+##### __set `git\API\Request\Base`
 ```php
 final public function __set(string $name, mixed $value);
 ```
@@ -535,7 +535,7 @@ Returns: mixed ***v*** null
 ---
 
 
-##### __isset `Gogs\API\Request\Base`
+##### __isset `git\API\Request\Base`
 ```php
 final public function __isset(string $name);
 ```
@@ -557,7 +557,7 @@ Returns: bool
 ---
 
 
-##### set_scope `Gogs\API\Request\Base`
+##### set_scope `git\API\Request\Base`
 ```php
 abstract protected function set_scope(string $method);
 ```
@@ -583,7 +583,7 @@ Returns: bool
 ---
 
 
-##### search `Gogs\API\Request\Base`
+##### search `git\API\Request\Base`
 ```php
 protected function search(array $params = array(), bool $strict = false);
 ```
@@ -613,20 +613,20 @@ Parameters
 |array|$params   |Parameters                                            |
 |bool  |$strict   |Turn search into AND-ing, require match in each field.|
 
-Returns: [true](#true-gogsapirequest)
+Returns: [true](#true-gitapirequest)
 
 Throws: 
 
-* [SearchParamException](#searchparamexception-gogsapirequestexception "Exception: Gogs\API\Request\Exception\SearchParamException")
+* [SearchParamException](#searchparamexception-gitapirequestexception "Exception: git\API\Request\Exception\SearchParamException")
 
 ---
 
 
-### Branch `Gogs\API\Request`
+### Branch `git\API\Request`
 
 
-* Class extends [Gogs\API\Request\Base](#base-gogsapirequest)
-* Class implements[Gogs\API\Request\RequestInterface](#requestinterface-gogsapirequest)
+* Class extends [git\API\Request\Base](#base-gitapirequest)
+* Class implements[git\API\Request\RequestInterface](#requestinterface-gitapirequest)
 
 A single Branch
 
@@ -634,12 +634,12 @@ A single Branch
 
 |Name                                            |Return|Access   |Description                                   |
 |:---                                            |:---  |:---     |:---                                          |
-|[__construct](#__construct-gogsapirequestbranch)|      |public   | Initialize a branch for the given repository.|
-|[set_scope](#set_scope-gogsapirequestbranch)    |bool  |protected|                                              |
+|[__construct](#__construct-gitapirequestbranch)|      |public   | Initialize a branch for the given repository.|
+|[set_scope](#set_scope-gitapirequestbranch)    |bool  |protected|                                              |
 
 #### Method details
 
-##### __construct `Gogs\API\Request\Branch`
+##### __construct `git\API\Request\Branch`
 ```php
 public function __construct(string $api_url, string $api_token, Repo $repo);
 ```
@@ -652,11 +652,11 @@ Parameters
 |---                     |---       |---                           |
 |string                  |$api_url  |The URL to the API.           |
 |string                  |$api_token|A token for an authorized user|
-|[Repo](#request-gogsapi)|$repo     |Related repository            |
+|[Repo](#request-gitapi)|$repo     |Related repository            |
 ---
 
 
-##### set_scope `Gogs\API\Request\Branch`
+##### set_scope `git\API\Request\Branch`
 ```php
 protected function set_scope(string $method);
 ```
@@ -672,13 +672,13 @@ Returns: bool
 ---
 
 
-### Branches `Gogs\API\Request`
+### Branches `git\API\Request`
 
 
-* Class extends [Gogs\API\Request\Collection](#collection-gogsapirequest)
+* Class extends [git\API\Request\Collection](#collection-gitapirequest)
 * Class implements
-	* [Gogs\Lib\ArrayIterator](#arrayiterator-gogslib)
-	* [Gogs\API\Request\RequestInterface](#requestinterface-gogsapirequest)
+	* [git\Lib\ArrayIterator](#arrayiterator-gitlib)
+	* [git\API\Request\RequestInterface](#requestinterface-gitapirequest)
 
 Holds a collection of Branches for a Repository.
 
@@ -689,15 +689,15 @@ Supported:
 
 |Name                                              |Return                           |Access   |Description                         |
 |:---                                              |:---                             |:---     |:---                                |
-|[__construct](#__construct-gogsapirequestbranches)|                                 |public   | Initialize Brances for a given repo|
-|[set_scope](#set_scope-gogsapirequestbranches)    |bool                             |protected|                                    |
-|[search](#search-gogsapirequestbranches)          |[true](#true-gogsapirequest)     |public   | Search for a branch.               |
-|[sort_by](#sort_by-gogsapirequestbranches)        |[Collection](#collection-gogslib)|public   |                                    |
-|[add_object](#add_object-gogsapirequestbranches)  |array                            |protected|                                    |
+|[__construct](#__construct-gitapirequestbranches)|                                 |public   | Initialize Brances for a given repo|
+|[set_scope](#set_scope-gitapirequestbranches)    |bool                             |protected|                                    |
+|[search](#search-gitapirequestbranches)          |[true](#true-gitapirequest)     |public   | Search for a branch.               |
+|[sort_by](#sort_by-gitapirequestbranches)        |[Collection](#collection-gitlib)|public   |                                    |
+|[add_object](#add_object-gitapirequestbranches)  |array                            |protected|                                    |
 
 #### Method details
 
-##### __construct `Gogs\API\Request\Branches`
+##### __construct `git\API\Request\Branches`
 ```php
 public function __construct(string $api_url, string $api_token, Repo $repo);
 ```
@@ -710,11 +710,11 @@ Parameters
 |---                     |---       |---                           |
 |string                  |$api_url  |The URL to the API.           |
 |string                  |$api_token|A token for an authorized user|
-|[Repo](#request-gogsapi)|$repo     |The repository                |
+|[Repo](#request-gitapi)|$repo     |The repository                |
 ---
 
 
-##### set_scope `Gogs\API\Request\Branches`
+##### set_scope `git\API\Request\Branches`
 ```php
 protected function set_scope(string $method);
 ```
@@ -730,14 +730,14 @@ Returns: bool
 ---
 
 
-##### search `Gogs\API\Request\Branches`
+##### search `git\API\Request\Branches`
 ```php
 public function search(array $params = array(), bool $strict = true);
 ```
  Search for a branch.
 
 This method doesnt search by a uri, instead it will
-load every branch from Gogs and do a match on this.
+load every branch from git and do a match on this.
 
 Params can be an array of
 ```php
@@ -757,16 +757,16 @@ Parameters
 |array|$params   |Parameters                                            |
 |bool  |$strict   |Turn search into AND-ing, require match in each field.|
 
-Returns: [true](#true-gogsapirequest)
+Returns: [true](#true-gitapirequest)
 
 Throws: 
 
-* [SearchParamException](#searchparamexception-gogsapirequestexception "Exception: Gogs\API\Request\Exception\SearchParamException")
+* [SearchParamException](#searchparamexception-gitapirequestexception "Exception: git\API\Request\Exception\SearchParamException")
 
 ---
 
 
-##### sort_by `Gogs\API\Request\Branches`
+##### sort_by `git\API\Request\Branches`
 ```php
 public function sort_by(int $flag = Collection::SORT_INDEX);
 ```
@@ -777,12 +777,12 @@ Parameters
 |---   |---       |---          |
 |int   |$flag     |Sorting flag|
 
-Returns: [Collection](#collection-gogslib)
+Returns: [Collection](#collection-gitlib)
 
 ---
 
 
-##### add_object `Gogs\API\Request\Branches`
+##### add_object `git\API\Request\Branches`
 ```php
 protected function add_object(iterable $obj);
 ```
@@ -798,13 +798,13 @@ Returns: array
 ---
 
 
-### Collection `Gogs\API\Request`
+### Collection `git\API\Request`
 
 
-* Class extends [Gogs\API\Request\Base](#base-gogsapirequest)
+* Class extends [git\API\Request\Base](#base-gitapirequest)
 * Class implements
-	* [Gogs\Lib\ArrayIterator](#arrayiterator-gogslib)
-	* [Gogs\API\Request\RequestInterface](#requestinterface-gogsapirequest)
+	* [git\Lib\ArrayIterator](#arrayiterator-gitlib)
+	* [git\API\Request\RequestInterface](#requestinterface-gitapirequest)
 
 Collection is a collection of data of one type.
 
@@ -812,30 +812,30 @@ Collection is a collection of data of one type.
 
 |Name                                                            |Return                                    |Access            |Description                                             |
 |:---                                                            |:---                                      |:---              |:---                                                    |
-|[__construct](#__construct-gogsapirequestcollection)            |                                          |public            | Initialize a collection.                               |
-|[add](#add-gogsapirequestcollection)                            |mixed ***v*** int                         |protected         | Add an object to the collection.                       |
-|[remove](#remove-gogsapirequestcollection)                      |bool                                      |protected         | Remove an element in collection.                       |
-|[copy](#copy-gogsapirequestcollection)                          |[Colletion](#colletion-gogslib)           |public            |                                                        |
-|[all](#all-gogsapirequestcollection)                            |array                                     |public            |                                                        |
-|[len](#len-gogsapirequestcollection)                            |int                                       |public            |                                                        |
-|[by_key](#by_key-gogsapirequestcollection)                      |mixed                                     |public            |                                                        |
-|[next](#next-gogsapirequestcollection)                          |mixed                                     |public            |                                                        |
-|[prev](#prev-gogsapirequestcollection)                          |mixed                                     |public            |                                                        |
-|[current](#current-gogsapirequestcollection)                    |                                          |public            |                                                        |
-|[reset](#reset-gogsapirequestcollection)                        |mixed                                     |public            |                                                        |
-|[sort](#sort-gogsapirequestcollection)                          |[Collection](#collection-gogslib)         |public            |                                                        |
-|[filter](#filter-gogsapirequestcollection)                      |[Collection](#collection-gogslib)         |public            |                                                        |
-|[limit](#limit-gogsapirequestcollection)                        |[Collection](#collection-gogslib)         |public            |                                                        |
-|[offset](#offset-gogsapirequestcollection)                      |[Collection](#collection-gogslib)         |public            |                                                        |
-|[reverse](#reverse-gogsapirequestcollection)                    |[Collection](#collection-gogslib)         |public            |                                                        |
-|[json_set_property](#json_set_property-gogsapirequestcollection)|[true](#true-gogsapirequest) ***v*** array|protected         |                                                        |
-|[search](#search-gogsapirequestcollection)                      |[true](#true-gogsapirequest)              |public            | Search an collection.                                  |
-|[add_object](#add_object-gogsapirequestcollection)              |array                                     |abstract protected| Add an object to the collection with the specific type.|
-|[sort_by](#sort_by-gogsapirequestcollection)                    |[Collection](#collection-gogslib)         |abstract public   | Sort the object                                        |
+|[__construct](#__construct-gitapirequestcollection)            |                                          |public            | Initialize a collection.                               |
+|[add](#add-gitapirequestcollection)                            |mixed ***v*** int                         |protected         | Add an object to the collection.                       |
+|[remove](#remove-gitapirequestcollection)                      |bool                                      |protected         | Remove an element in collection.                       |
+|[copy](#copy-gitapirequestcollection)                          |[Colletion](#colletion-gitlib)           |public            |                                                        |
+|[all](#all-gitapirequestcollection)                            |array                                     |public            |                                                        |
+|[len](#len-gitapirequestcollection)                            |int                                       |public            |                                                        |
+|[by_key](#by_key-gitapirequestcollection)                      |mixed                                     |public            |                                                        |
+|[next](#next-gitapirequestcollection)                          |mixed                                     |public            |                                                        |
+|[prev](#prev-gitapirequestcollection)                          |mixed                                     |public            |                                                        |
+|[current](#current-gitapirequestcollection)                    |                                          |public            |                                                        |
+|[reset](#reset-gitapirequestcollection)                        |mixed                                     |public            |                                                        |
+|[sort](#sort-gitapirequestcollection)                          |[Collection](#collection-gitlib)         |public            |                                                        |
+|[filter](#filter-gitapirequestcollection)                      |[Collection](#collection-gitlib)         |public            |                                                        |
+|[limit](#limit-gitapirequestcollection)                        |[Collection](#collection-gitlib)         |public            |                                                        |
+|[offset](#offset-gitapirequestcollection)                      |[Collection](#collection-gitlib)         |public            |                                                        |
+|[reverse](#reverse-gitapirequestcollection)                    |[Collection](#collection-gitlib)         |public            |                                                        |
+|[json_set_property](#json_set_property-gitapirequestcollection)|[true](#true-gitapirequest) ***v*** array|protected         |                                                        |
+|[search](#search-gitapirequestcollection)                      |[true](#true-gitapirequest)              |public            | Search an collection.                                  |
+|[add_object](#add_object-gitapirequestcollection)              |array                                     |abstract protected| Add an object to the collection with the specific type.|
+|[sort_by](#sort_by-gitapirequestcollection)                    |[Collection](#collection-gitlib)         |abstract public   | Sort the object                                        |
 
 #### Method details
 
-##### __construct `Gogs\API\Request\Collection`
+##### __construct `git\API\Request\Collection`
 ```php
 public function __construct(string $api_url, string $api_token, Collection $other = null);
 ```
@@ -848,11 +848,11 @@ Parameters
 |---                           |---       |---                           |
 |string                        |$api_url  |The URL to the API.           |
 |string                        |$api_token|A token for an authorized user|
-|[Collection](#request-gogsapi)|$other    |Collection to initialize from|
+|[Collection](#request-gitapi)|$other    |Collection to initialize from|
 ---
 
 
-##### add `Gogs\API\Request\Collection`
+##### add `git\API\Request\Collection`
 ```php
 protected function add(mixed $obj, mixed $key = null);
 ```
@@ -874,7 +874,7 @@ Returns: mixed ***v*** int
 ---
 
 
-##### remove `Gogs\API\Request\Collection`
+##### remove `git\API\Request\Collection`
 ```php
 protected function remove(mixed $any, bool $deep = true);
 ```
@@ -899,17 +899,17 @@ Returns: bool
 ---
 
 
-##### copy `Gogs\API\Request\Collection`
+##### copy `git\API\Request\Collection`
 ```php
 public function copy();
 ```
 
-Returns: [Colletion](#colletion-gogslib)
+Returns: [Colletion](#colletion-gitlib)
 
 ---
 
 
-##### all `Gogs\API\Request\Collection`
+##### all `git\API\Request\Collection`
 ```php
 public function all();
 ```
@@ -919,7 +919,7 @@ Returns: array
 ---
 
 
-##### len `Gogs\API\Request\Collection`
+##### len `git\API\Request\Collection`
 ```php
 public function len();
 ```
@@ -929,7 +929,7 @@ Returns: int
 ---
 
 
-##### by_key `Gogs\API\Request\Collection`
+##### by_key `git\API\Request\Collection`
 ```php
 public function by_key(mixed $idx);
 ```
@@ -945,7 +945,7 @@ Returns: mixed
 ---
 
 
-##### next `Gogs\API\Request\Collection`
+##### next `git\API\Request\Collection`
 ```php
 public function next();
 ```
@@ -955,7 +955,7 @@ Returns: mixed
 ---
 
 
-##### prev `Gogs\API\Request\Collection`
+##### prev `git\API\Request\Collection`
 ```php
 public function prev();
 ```
@@ -965,14 +965,14 @@ Returns: mixed
 ---
 
 
-##### current `Gogs\API\Request\Collection`
+##### current `git\API\Request\Collection`
 ```php
 public function current();
 ```
 ---
 
 
-##### reset `Gogs\API\Request\Collection`
+##### reset `git\API\Request\Collection`
 ```php
 public function reset();
 ```
@@ -982,7 +982,7 @@ Returns: mixed
 ---
 
 
-##### sort `Gogs\API\Request\Collection`
+##### sort `git\API\Request\Collection`
 ```php
 public function sort(callable $f);
 ```
@@ -993,12 +993,12 @@ Parameters
 |---     |---       |---          |
 |callable|$f        |*None*       |
 
-Returns: [Collection](#collection-gogslib)
+Returns: [Collection](#collection-gitlib)
 
 ---
 
 
-##### filter `Gogs\API\Request\Collection`
+##### filter `git\API\Request\Collection`
 ```php
 public function filter(callable $f);
 ```
@@ -1009,12 +1009,12 @@ Parameters
 |---     |---       |---          |
 |callable|$f        |*None*       |
 
-Returns: [Collection](#collection-gogslib)
+Returns: [Collection](#collection-gitlib)
 
 ---
 
 
-##### limit `Gogs\API\Request\Collection`
+##### limit `git\API\Request\Collection`
 ```php
 public function limit(int $lim);
 ```
@@ -1025,12 +1025,12 @@ Parameters
 |---   |---       |---                     |
 |int   |$lim      |Maximum entries returned|
 
-Returns: [Collection](#collection-gogslib)
+Returns: [Collection](#collection-gitlib)
 
 ---
 
 
-##### offset `Gogs\API\Request\Collection`
+##### offset `git\API\Request\Collection`
 ```php
 public function offset(int $off);
 ```
@@ -1041,22 +1041,22 @@ Parameters
 |---   |---       |---                      |
 |int   |$off      |Offset from in collection|
 
-Returns: [Collection](#collection-gogslib)
+Returns: [Collection](#collection-gitlib)
 
 ---
 
 
-##### reverse `Gogs\API\Request\Collection`
+##### reverse `git\API\Request\Collection`
 ```php
 public function reverse();
 ```
 
-Returns: [Collection](#collection-gogslib)
+Returns: [Collection](#collection-gitlib)
 
 ---
 
 
-##### json_set_property `Gogs\API\Request\Collection`
+##### json_set_property `git\API\Request\Collection`
 ```php
 protected function json_set_property(iterable $obj);
 ```
@@ -1067,12 +1067,12 @@ Parameters
 |---                                                                                                    |---       |---          |
 |[iterable](http://php.net/manual/en/functions.arguments.php#functions.arguments.type-declaration.types)|$obj      |*None*       |
 
-Returns: [true](#true-gogsapirequest) ***v*** array
+Returns: [true](#true-gitapirequest) ***v*** array
 
 ---
 
 
-##### search `Gogs\API\Request\Collection`
+##### search `git\API\Request\Collection`
 ```php
 public function search(array $params = array(), bool $strict = false);
 ```
@@ -1086,16 +1086,16 @@ Parameters
 |array|$params   |Parameters                                            |
 |bool  |$strict   |Turn search into AND-ing, require match in each field.|
 
-Returns: [true](#true-gogsapirequest)
+Returns: [true](#true-gitapirequest)
 
 Throws: 
 
-* [NotImplementedException](#notimplementedexception-gogsapirequestexception "Exception: Gogs\API\Request\Exception\NotImplementedException")
+* [NotImplementedException](#notimplementedexception-gitapirequestexception "Exception: git\API\Request\Exception\NotImplementedException")
 
 ---
 
 
-##### add_object `Gogs\API\Request\Collection`
+##### add_object `git\API\Request\Collection`
 ```php
 abstract protected function add_object(iterable $object);
 ```
@@ -1118,9 +1118,9 @@ Returns: array
 ---
 
 
-##### sort_by `Gogs\API\Request\Collection`
+##### sort_by `git\API\Request\Collection`
 ```php
-abstract public function sort_by(int $flag = \Gogs\Lib\ArrayIterator::SORT_INDEX);
+abstract public function sort_by(int $flag = \git\Lib\ArrayIterator::SORT_INDEX);
 ```
  Sort the object
 
@@ -1134,16 +1134,16 @@ Parameters
 |---   |---       |---          |
 |int   |$flag     |Sorting flag|
 
-Returns: [Collection](#collection-gogslib)
+Returns: [Collection](#collection-gitlib)
 
 ---
 
 
-### Org `Gogs\API\Request`
+### Org `git\API\Request`
 
 
-* Class extends [Gogs\API\Request\User](#user-gogsapirequest)
-* Class implements[Gogs\API\Request\RequestInterface](#requestinterface-gogsapirequest)
+* Class extends [git\API\Request\User](#user-gitapirequest)
+* Class implements[git\API\Request\RequestInterface](#requestinterface-gitapirequest)
 
 Stores data and methods related to a single organization.
 
@@ -1156,13 +1156,13 @@ By now the following are supported:
 
 |Name                                         |Return|Access   |Description                 |
 |:---                                         |:---  |:---     |:---                        |
-|[__construct](#__construct-gogsapirequestorg)|      |public   | Initialize an organization.|
-|[set_scope](#set_scope-gogsapirequestorg)    |bool  |protected|                            |
-|[create](#create-gogsapirequestorg)          |bool  |public   | Create a new user          |
+|[__construct](#__construct-gitapirequestorg)|      |public   | Initialize an organization.|
+|[set_scope](#set_scope-gitapirequestorg)    |bool  |protected|                            |
+|[create](#create-gitapirequestorg)          |bool  |public   | Create a new user          |
 
 #### Method details
 
-##### __construct `Gogs\API\Request\Org`
+##### __construct `git\API\Request\Org`
 ```php
 public function __construct(string $api_url, string $api_token, User $owner = null, string $oname = null);
 ```
@@ -1175,12 +1175,12 @@ Parameters
 |---                     |---       |---                           |
 |string                  |$api_url  |The URL to the API.           |
 |string                  |$api_token|A token for an authorized user|
-|[User](#request-gogsapi)|$owner    |The owner of the organization|
+|[User](#request-gitapi)|$owner    |The owner of the organization|
 |string                  |$oname    |Organization name             |
 ---
 
 
-##### set_scope `Gogs\API\Request\Org`
+##### set_scope `git\API\Request\Org`
 ```php
 protected function set_scope(string $method);
 ```
@@ -1195,13 +1195,13 @@ Returns: bool
 
 Throws: 
 
-* [InvalidMethodRequestException](#invalidmethodrequestexception-gogsapirequestexception "Exception: Gogs\API\Request\Exception\InvalidMethodRequestException")
-* [RequestErrorException](#requesterrorexception-gogsapirequestexception "Exception: Gogs\API\Request\Exception\RequestErrorException")
+* [InvalidMethodRequestException](#invalidmethodrequestexception-gitapirequestexception "Exception: git\API\Request\Exception\InvalidMethodRequestException")
+* [RequestErrorException](#requesterrorexception-gitapirequestexception "Exception: git\API\Request\Exception\RequestErrorException")
 
 ---
 
 
-##### create `Gogs\API\Request\Org`
+##### create `git\API\Request\Org`
 ```php
 public function create(... $args);
 ```
@@ -1230,13 +1230,13 @@ Returns: bool
 ---
 
 
-### Orgs `Gogs\API\Request`
+### Orgs `git\API\Request`
 
 
-* Class extends [Gogs\API\Request\Collection](#collection-gogsapirequest)
+* Class extends [git\API\Request\Collection](#collection-gitapirequest)
 * Class implements
-	* [Gogs\Lib\ArrayIterator](#arrayiterator-gogslib)
-	* [Gogs\API\Request\RequestInterface](#requestinterface-gogsapirequest)
+	* [git\Lib\ArrayIterator](#arrayiterator-gitlib)
+	* [git\API\Request\RequestInterface](#requestinterface-gitapirequest)
 
 Orgs is a collection of organizations.
 
@@ -1244,17 +1244,17 @@ Orgs is a collection of organizations.
 
 |Name                                          |Return                           |Access   |Description                                     |
 |:---                                          |:---                             |:---     |:---                                            |
-|[__construct](#__construct-gogsapirequestorgs)|                                 |public   | Initialize an organization collection for user.|
-|[set_scope](#set_scope-gogsapirequestorgs)    |bool                             |protected|                                                |
-|[create](#create-gogsapirequestorgs)          |bool                             |public   | Create a new organization                      |
-|[get](#get-gogsapirequestorgs)                |object                           |public   | Get an organization by indentifier.            |
-|[search](#search-gogsapirequestorgs)          |[true](#true-gogsapirequest)     |public   | Search for an organization.                    |
-|[add_object](#add_object-gogsapirequestorgs)  |array                            |protected|                                                |
-|[sort_by](#sort_by-gogsapirequestorgs)        |[Collection](#collection-gogslib)|public   |                                                |
+|[__construct](#__construct-gitapirequestorgs)|                                 |public   | Initialize an organization collection for user.|
+|[set_scope](#set_scope-gitapirequestorgs)    |bool                             |protected|                                                |
+|[create](#create-gitapirequestorgs)          |bool                             |public   | Create a new organization                      |
+|[get](#get-gitapirequestorgs)                |object                           |public   | Get an organization by indentifier.            |
+|[search](#search-gitapirequestorgs)          |[true](#true-gitapirequest)     |public   | Search for an organization.                    |
+|[add_object](#add_object-gitapirequestorgs)  |array                            |protected|                                                |
+|[sort_by](#sort_by-gitapirequestorgs)        |[Collection](#collection-gitlib)|public   |                                                |
 
 #### Method details
 
-##### __construct `Gogs\API\Request\Orgs`
+##### __construct `git\API\Request\Orgs`
 ```php
 public function __construct(string $api_url, string $api_token, User $owner);
 ```
@@ -1267,11 +1267,11 @@ Parameters
 |---                     |---       |---                           |
 |string                  |$api_url  |The URL to the API.           |
 |string                  |$api_token|A token for an authorized user|
-|[User](#request-gogsapi)|$owner    |The user                      |
+|[User](#request-gitapi)|$owner    |The user                      |
 ---
 
 
-##### set_scope `Gogs\API\Request\Orgs`
+##### set_scope `git\API\Request\Orgs`
 ```php
 protected function set_scope(string $method);
 ```
@@ -1287,7 +1287,7 @@ Returns: bool
 ---
 
 
-##### create `Gogs\API\Request\Orgs`
+##### create `git\API\Request\Orgs`
 ```php
 public function create(... $args);
 ```
@@ -1309,7 +1309,7 @@ Returns: bool
 ---
 
 
-##### get `Gogs\API\Request\Orgs`
+##### get `git\API\Request\Orgs`
 ```php
 public function get(string $s);
 ```
@@ -1320,7 +1320,7 @@ already loaded. If not found it will return a
 new object.
 
 Method does not ensure the organization in loaded
-from Gogs so the user should call `->load()` on
+from git so the user should call `->load()` on
 returned element.
 
 
@@ -1335,7 +1335,7 @@ Returns: object
 ---
 
 
-##### search `Gogs\API\Request\Orgs`
+##### search `git\API\Request\Orgs`
 ```php
 public function search(array $params = array(), bool $strict = false);
 ```
@@ -1359,16 +1359,16 @@ Parameters
 |array|$params   |Parameters                                            |
 |bool  |$strict   |Turn search into AND-ing, require match in each field.|
 
-Returns: [true](#true-gogsapirequest)
+Returns: [true](#true-gitapirequest)
 
 Throws: 
 
-* [SearchParamException](#searchparamexception-gogsapirequestexception "Exception: Gogs\API\Request\Exception\SearchParamException")
+* [SearchParamException](#searchparamexception-gitapirequestexception "Exception: git\API\Request\Exception\SearchParamException")
 
 ---
 
 
-##### add_object `Gogs\API\Request\Orgs`
+##### add_object `git\API\Request\Orgs`
 ```php
 protected function add_object(iterable $obj);
 ```
@@ -1384,7 +1384,7 @@ Returns: array
 ---
 
 
-##### sort_by `Gogs\API\Request\Orgs`
+##### sort_by `git\API\Request\Orgs`
 ```php
 public function sort_by(int $flag = Collection::SORT_INDEX);
 ```
@@ -1395,16 +1395,16 @@ Parameters
 |---   |---       |---          |
 |int   |$flag     |Sorting flag|
 
-Returns: [Collection](#collection-gogslib)
+Returns: [Collection](#collection-gitlib)
 
 ---
 
 
-### Repo `Gogs\API\Request`
+### Repo `git\API\Request`
 
 
-* Class extends [Gogs\API\Request\Base](#base-gogsapirequest)
-* Class implements[Gogs\API\Request\RequestInterface](#requestinterface-gogsapirequest)
+* Class extends [git\API\Request\Base](#base-gitapirequest)
+* Class implements[git\API\Request\RequestInterface](#requestinterface-gitapirequest)
 
 Stores data and methods related to a single repository.
 
@@ -1420,17 +1420,17 @@ By now the following are supported:
 
 |Name                                                      |Return                                    |Access   |Description                                            |
 |:---                                                      |:---                                      |:---     |:---                                                   |
-|[__construct](#__construct-gogsapirequestrepo)            |                                          |public   | Initialize a repo object.                             |
-|[set_scope](#set_scope-gogsapirequestrepo)                |bool                                      |protected|                                                       |
-|[branches](#branches-gogsapirequestrepo)                  |[Branches](#branches-gogsapirequest)      |public   | Return branches for repository.                       |
-|[json_set_property](#json_set_property-gogsapirequestrepo)|[true](#true-gogsapirequest) ***v*** array|protected| Overrides Base method as this should set owner as well|
-|[create](#create-gogsapirequestrepo)                      |bool                                      |public   | Create a new repo                                     |
-|[migrate](#migrate-gogsapirequestrepo)                    |                                          |public   | Migrate a repository from other Git hosting sources.  |
-|[sync](#sync-gogsapirequestrepo)                          |bool                                      |public   | Add repo to sync queue.                               |
+|[__construct](#__construct-gitapirequestrepo)            |                                          |public   | Initialize a repo object.                             |
+|[set_scope](#set_scope-gitapirequestrepo)                |bool                                      |protected|                                                       |
+|[branches](#branches-gitapirequestrepo)                  |[Branches](#branches-gitapirequest)      |public   | Return branches for repository.                       |
+|[json_set_property](#json_set_property-gitapirequestrepo)|[true](#true-gitapirequest) ***v*** array|protected| Overrides Base method as this should set owner as well|
+|[create](#create-gitapirequestrepo)                      |bool                                      |public   | Create a new repo                                     |
+|[migrate](#migrate-gitapirequestrepo)                    |                                          |public   | Migrate a repository from other Git hosting sources.  |
+|[sync](#sync-gitapirequestrepo)                          |bool                                      |public   | Add repo to sync queue.                               |
 
 #### Method details
 
-##### __construct `Gogs\API\Request\Repo`
+##### __construct `git\API\Request\Repo`
 ```php
 public function __construct(string $api_url, string $api_token, User $owner = null, string $name = null);
 ```
@@ -1446,12 +1446,12 @@ Parameters
 |---                     |---       |---                           |
 |string                  |$api_url  |The URL to the API.           |
 |string                  |$api_token|A token for an authorized user|
-|[User](#request-gogsapi)|$owner    |The owner of the repo         |
+|[User](#request-gitapi)|$owner    |The owner of the repo         |
 |string                  |$name     |The repo name                 |
 ---
 
 
-##### set_scope `Gogs\API\Request\Repo`
+##### set_scope `git\API\Request\Repo`
 ```php
 protected function set_scope(string $method);
 ```
@@ -1466,24 +1466,24 @@ Returns: bool
 
 Throws: 
 
-* [RequestErrorException](#requesterrorexception-gogsapirequestexception "Exception: Gogs\API\Request\Exception\RequestErrorException")
+* [RequestErrorException](#requesterrorexception-gitapirequestexception "Exception: git\API\Request\Exception\RequestErrorException")
 
 ---
 
 
-##### branches `Gogs\API\Request\Repo`
+##### branches `git\API\Request\Repo`
 ```php
 public function branches();
 ```
  Return branches for repository.
 
 
-Returns: [Branches](#branches-gogsapirequest)
+Returns: [Branches](#branches-gitapirequest)
 
 ---
 
 
-##### json_set_property `Gogs\API\Request\Repo`
+##### json_set_property `git\API\Request\Repo`
 ```php
 protected function json_set_property(iterable $obj);
 ```
@@ -1496,12 +1496,12 @@ Parameters
 |---                                                                                                    |---       |---          |
 |[iterable](http://php.net/manual/en/functions.arguments.php#functions.arguments.type-declaration.types)|$obj      |*None*       |
 
-Returns: [true](#true-gogsapirequest) ***v*** array
+Returns: [true](#true-gitapirequest) ***v*** array
 
 ---
 
 
-##### create `Gogs\API\Request\Repo`
+##### create `git\API\Request\Repo`
 ```php
 public function create(... $args);
 ```
@@ -1532,7 +1532,7 @@ Returns: bool
 ---
 
 
-##### migrate `Gogs\API\Request\Repo`
+##### migrate `git\API\Request\Repo`
 ```php
 public function migrate(mixed $args);
 ```
@@ -1563,12 +1563,12 @@ Parameters
 |mixed|$args     |*None*       |
 Throws: 
 
-* [RequestErrorException](#requesterrorexception-gogsapirequestexception "Exception: Gogs\API\Request\Exception\RequestErrorException")
+* [RequestErrorException](#requesterrorexception-gitapirequestexception "Exception: git\API\Request\Exception\RequestErrorException")
 
 ---
 
 
-##### sync `Gogs\API\Request\Repo`
+##### sync `git\API\Request\Repo`
 ```php
 public function sync();
 ```
@@ -1582,13 +1582,13 @@ Returns: bool
 ---
 
 
-### Repos `Gogs\API\Request`
+### Repos `git\API\Request`
 
 
-* Class extends [Gogs\API\Request\Collection](#collection-gogsapirequest)
+* Class extends [git\API\Request\Collection](#collection-gitapirequest)
 * Class implements
-	* [Gogs\Lib\ArrayIterator](#arrayiterator-gogslib)
-	* [Gogs\API\Request\RequestInterface](#requestinterface-gogsapirequest)
+	* [git\Lib\ArrayIterator](#arrayiterator-gitlib)
+	* [git\API\Request\RequestInterface](#requestinterface-gitapirequest)
 
 Repos is a collection of repos.
 
@@ -1596,32 +1596,32 @@ Repos is a collection of repos.
 
 |Name                                                                 |Return                           |Access   |Description                       |
 |:---                                                                 |:---                             |:---     |:---                              |
-|[__construct](#__construct-gogsapirequestrepos)                      |                                 |public   | Initialize a repos collection    |
-|[set_scope](#set_scope-gogsapirequestrepos)                          |bool                             |protected|                                  |
-|[get](#get-gogsapirequestrepos)                                      |object                           |public   | Get a single repository by name.|
-|[create](#create-gogsapirequestrepos)                                |bool                             |public   |                                  |
-|[search](#search-gogsapirequestrepos)                                |[true](#true-gogsapirequest)     |public   | Searches for a repo.             |
-|[sort_by](#sort_by-gogsapirequestrepos)                              |[Collection](#collection-gogslib)|public   | Sort repos by `method`.          |
-|[add_object](#add_object-gogsapirequestrepos)                        |array                            |protected|                                  |
-|[privates](#privates-gogsapirequestrepos)                            |[Collection](#collection-gogslib)|public   | Get private repositories         |
-|[publics](#publics-gogsapirequestrepos)                              |[Collection](#collection-gogslib)|public   | Get public repositories          |
-|[personals](#personals-gogsapirequestrepos)                          |[Collection](#collection-gogslib)|public   | Get personal repositories        |
-|[contributions](#contributions-gogsapirequestrepos)                  |[Collection](#collection-gogslib)|public   | Get repositories contributed to  |
-|[personals_privates](#personals_privates-gogsapirequestrepos)        |[Collection](#collection-gogslib)|public   | Get personal private repositories|
-|[personals_publics](#personals_publics-gogsapirequestrepos)          |[Collection](#collection-gogslib)|public   | Get personal public repositories|
-|[contributions_privates](#contributions_privates-gogsapirequestrepos)|[Collection](#collection-gogslib)|public   | Get private contributions        |
-|[contributions_publics](#contributions_publics-gogsapirequestrepos)  |[Collection](#collection-gogslib)|public   | Get public contributions         |
+|[__construct](#__construct-gitapirequestrepos)                      |                                 |public   | Initialize a repos collection    |
+|[set_scope](#set_scope-gitapirequestrepos)                          |bool                             |protected|                                  |
+|[get](#get-gitapirequestrepos)                                      |object                           |public   | Get a single repository by name.|
+|[create](#create-gitapirequestrepos)                                |bool                             |public   |                                  |
+|[search](#search-gitapirequestrepos)                                |[true](#true-gitapirequest)     |public   | Searches for a repo.             |
+|[sort_by](#sort_by-gitapirequestrepos)                              |[Collection](#collection-gitlib)|public   | Sort repos by `method`.          |
+|[add_object](#add_object-gitapirequestrepos)                        |array                            |protected|                                  |
+|[privates](#privates-gitapirequestrepos)                            |[Collection](#collection-gitlib)|public   | Get private repositories         |
+|[publics](#publics-gitapirequestrepos)                              |[Collection](#collection-gitlib)|public   | Get public repositories          |
+|[personals](#personals-gitapirequestrepos)                          |[Collection](#collection-gitlib)|public   | Get personal repositories        |
+|[contributions](#contributions-gitapirequestrepos)                  |[Collection](#collection-gitlib)|public   | Get repositories contributed to  |
+|[personals_privates](#personals_privates-gitapirequestrepos)        |[Collection](#collection-gitlib)|public   | Get personal private repositories|
+|[personals_publics](#personals_publics-gitapirequestrepos)          |[Collection](#collection-gitlib)|public   | Get personal public repositories|
+|[contributions_privates](#contributions_privates-gitapirequestrepos)|[Collection](#collection-gitlib)|public   | Get private contributions        |
+|[contributions_publics](#contributions_publics-gitapirequestrepos)  |[Collection](#collection-gitlib)|public   | Get public contributions         |
 
 #### Method details
 
-##### __construct `Gogs\API\Request\Repos`
+##### __construct `git\API\Request\Repos`
 ```php
 public function __construct(string $api_url, string $api_token, User $owner = null);
 ```
  Initialize a repos collection
 
 If owner is not set it will query the whole
-repo archive on Gogs.
+repo archive on git.
 
 
 Parameters
@@ -1630,11 +1630,11 @@ Parameters
 |---                     |---       |---                           |
 |string                  |$api_url  |The URL to the API.           |
 |string                  |$api_token|A token for an authorized user|
-|[User](#request-gogsapi)|$owner    |The owner of the collection   |
+|[User](#request-gitapi)|$owner    |The owner of the collection   |
 ---
 
 
-##### set_scope `Gogs\API\Request\Repos`
+##### set_scope `git\API\Request\Repos`
 ```php
 protected function set_scope(string $method);
 ```
@@ -1650,7 +1650,7 @@ Returns: bool
 ---
 
 
-##### get `Gogs\API\Request\Repos`
+##### get `git\API\Request\Repos`
 ```php
 public function get(string $name);
 ```
@@ -1671,7 +1671,7 @@ Returns: object
 ---
 
 
-##### create `Gogs\API\Request\Repos`
+##### create `git\API\Request\Repos`
 ```php
 public function create(... $args);
 ```
@@ -1687,7 +1687,7 @@ Returns: bool
 ---
 
 
-##### search `Gogs\API\Request\Repos`
+##### search `git\API\Request\Repos`
 ```php
 public function search(array $params = array(), bool $strict = false);
 ```
@@ -1715,16 +1715,16 @@ Parameters
 |array|$params   |Parameters                                            |
 |bool  |$strict   |Turn search into AND-ing, require match in each field.|
 
-Returns: [true](#true-gogsapirequest)
+Returns: [true](#true-gitapirequest)
 
 Throws: 
 
-* [SearchParamException](#searchparamexception-gogsapirequestexception "Exception: Gogs\API\Request\Exception\SearchParamException")
+* [SearchParamException](#searchparamexception-gitapirequestexception "Exception: git\API\Request\Exception\SearchParamException")
 
 ---
 
 
-##### sort_by `Gogs\API\Request\Repos`
+##### sort_by `git\API\Request\Repos`
 ```php
 public function sort_by(int $flag = Collection::SORT_INDEX, bool $asc = false);
 ```
@@ -1744,12 +1744,12 @@ Parameters
 |int   |$flag     |Sorting flag   |
 |bool  |$asc      |Ascending order|
 
-Returns: [Collection](#collection-gogslib)
+Returns: [Collection](#collection-gitlib)
 
 ---
 
 
-##### add_object `Gogs\API\Request\Repos`
+##### add_object `git\API\Request\Repos`
 ```php
 protected function add_object(iterable $obj);
 ```
@@ -1765,107 +1765,107 @@ Returns: array
 ---
 
 
-##### privates `Gogs\API\Request\Repos`
+##### privates `git\API\Request\Repos`
 ```php
 public function privates();
 ```
  Get private repositories
 
 
-Returns: [Collection](#collection-gogslib)
+Returns: [Collection](#collection-gitlib)
 
 ---
 
 
-##### publics `Gogs\API\Request\Repos`
+##### publics `git\API\Request\Repos`
 ```php
 public function publics();
 ```
  Get public repositories
 
 
-Returns: [Collection](#collection-gogslib)
+Returns: [Collection](#collection-gitlib)
 
 ---
 
 
-##### personals `Gogs\API\Request\Repos`
+##### personals `git\API\Request\Repos`
 ```php
 public function personals();
 ```
  Get personal repositories
 
 
-Returns: [Collection](#collection-gogslib)
+Returns: [Collection](#collection-gitlib)
 
 ---
 
 
-##### contributions `Gogs\API\Request\Repos`
+##### contributions `git\API\Request\Repos`
 ```php
 public function contributions();
 ```
  Get repositories contributed to
 
 
-Returns: [Collection](#collection-gogslib)
+Returns: [Collection](#collection-gitlib)
 
 ---
 
 
-##### personals_privates `Gogs\API\Request\Repos`
+##### personals_privates `git\API\Request\Repos`
 ```php
 public function personals_privates();
 ```
  Get personal private repositories
 
 
-Returns: [Collection](#collection-gogslib)
+Returns: [Collection](#collection-gitlib)
 
 ---
 
 
-##### personals_publics `Gogs\API\Request\Repos`
+##### personals_publics `git\API\Request\Repos`
 ```php
 public function personals_publics();
 ```
  Get personal public repositories
 
 
-Returns: [Collection](#collection-gogslib)
+Returns: [Collection](#collection-gitlib)
 
 ---
 
 
-##### contributions_privates `Gogs\API\Request\Repos`
+##### contributions_privates `git\API\Request\Repos`
 ```php
 public function contributions_privates();
 ```
  Get private contributions
 
 
-Returns: [Collection](#collection-gogslib)
+Returns: [Collection](#collection-gitlib)
 
 ---
 
 
-##### contributions_publics `Gogs\API\Request\Repos`
+##### contributions_publics `git\API\Request\Repos`
 ```php
 public function contributions_publics();
 ```
  Get public contributions
 
 
-Returns: [Collection](#collection-gogslib)
+Returns: [Collection](#collection-gitlib)
 
 ---
 
 
-### Token `Gogs\API\Request`
+### Token `git\API\Request`
 
 
-* Class extends [Gogs\API\Request\Base](#base-gogsapirequest)
-* Class implements[Gogs\API\Request\RequestInterface](#requestinterface-gogsapirequest)
+* Class extends [git\API\Request\Base](#base-gitapirequest)
+* Class implements[git\API\Request\RequestInterface](#requestinterface-gitapirequest)
 
 A token related to a user
 
@@ -1879,13 +1879,13 @@ as this can load them.
 
 |Name                                           |Return|Access   |Description         |
 |:---                                           |:---  |:---     |:---                |
-|[__construct](#__construct-gogsapirequesttoken)|      |public   | Initializes a token|
-|[set_scope](#set_scope-gogsapirequesttoken)    |bool  |protected|                    |
-|[create](#create-gogsapirequesttoken)          |bool  |public   | Create a new token|
+|[__construct](#__construct-gitapirequesttoken)|      |public   | Initializes a token|
+|[set_scope](#set_scope-gitapirequesttoken)    |bool  |protected|                    |
+|[create](#create-gitapirequesttoken)          |bool  |public   | Create a new token|
 
 #### Method details
 
-##### __construct `Gogs\API\Request\Token`
+##### __construct `git\API\Request\Token`
 ```php
 public function __construct(string $api_url, string $password, User $user);
 ```
@@ -1898,11 +1898,11 @@ Parameters
 |---                     |---       |---                        |
 |string                  |$api_url  |The URL to the API.        |
 |string                  |$password|The users personal password|
-|[User](#request-gogsapi)|$user     |*None*                     |
+|[User](#request-gitapi)|$user     |*None*                     |
 ---
 
 
-##### set_scope `Gogs\API\Request\Token`
+##### set_scope `git\API\Request\Token`
 ```php
 protected function set_scope(string $method);
 ```
@@ -1918,7 +1918,7 @@ Returns: bool
 ---
 
 
-##### create `Gogs\API\Request\Token`
+##### create `git\API\Request\Token`
 ```php
 public function create(... $args);
 ```
@@ -1942,13 +1942,13 @@ Returns: bool
 ---
 
 
-### Tokens `Gogs\API\Request`
+### Tokens `git\API\Request`
 
 
-* Class extends [Gogs\API\Request\Collection](#collection-gogsapirequest)
+* Class extends [git\API\Request\Collection](#collection-gitapirequest)
 * Class implements
-	* [Gogs\Lib\ArrayIterator](#arrayiterator-gogslib)
-	* [Gogs\API\Request\RequestInterface](#requestinterface-gogsapirequest)
+	* [git\Lib\ArrayIterator](#arrayiterator-gitlib)
+	* [git\API\Request\RequestInterface](#requestinterface-gitapirequest)
 
 Collection of tokens for a given user.
 
@@ -1959,17 +1959,17 @@ Supports:
 
 |Name                                            |Return                           |Access   |Description                    |
 |:---                                            |:---                             |:---     |:---                           |
-|[__construct](#__construct-gogsapirequesttokens)|                                 |public   | Initialize a token collection.|
-|[set_scope](#set_scope-gogsapirequesttokens)    |bool                             |protected|                               |
-|[create](#create-gogsapirequesttokens)          |bool                             |public   | Create a new token.           |
-|[add_object](#add_object-gogsapirequesttokens)  |array                            |protected|                               |
-|[get](#get-gogsapirequesttokens)                |object                           |public   | Return a token by name        |
-|[search](#search-gogsapirequesttokens)          |[true](#true-gogsapirequest)     |public   | Search for a token.           |
-|[sort_by](#sort_by-gogsapirequesttokens)        |[Collection](#collection-gogslib)|public   |                               |
+|[__construct](#__construct-gitapirequesttokens)|                                 |public   | Initialize a token collection.|
+|[set_scope](#set_scope-gitapirequesttokens)    |bool                             |protected|                               |
+|[create](#create-gitapirequesttokens)          |bool                             |public   | Create a new token.           |
+|[add_object](#add_object-gitapirequesttokens)  |array                            |protected|                               |
+|[get](#get-gitapirequesttokens)                |object                           |public   | Return a token by name        |
+|[search](#search-gitapirequesttokens)          |[true](#true-gitapirequest)     |public   | Search for a token.           |
+|[sort_by](#sort_by-gitapirequesttokens)        |[Collection](#collection-gitlib)|public   |                               |
 
 #### Method details
 
-##### __construct `Gogs\API\Request\Tokens`
+##### __construct `git\API\Request\Tokens`
 ```php
 public function __construct(string $api_url, string $password, User $user);
 ```
@@ -1982,11 +1982,11 @@ Parameters
 |---                     |---       |---                     |
 |string                  |$api_url  |The URL to the API.     |
 |string                  |$password|User's personal password|
-|[User](#request-gogsapi)|$user     |Owner of tokens         |
+|[User](#request-gitapi)|$user     |Owner of tokens         |
 ---
 
 
-##### set_scope `Gogs\API\Request\Tokens`
+##### set_scope `git\API\Request\Tokens`
 ```php
 protected function set_scope(string $method);
 ```
@@ -2002,7 +2002,7 @@ Returns: bool
 ---
 
 
-##### create `Gogs\API\Request\Tokens`
+##### create `git\API\Request\Tokens`
 ```php
 public function create(... $args);
 ```
@@ -2031,7 +2031,7 @@ Returns: bool
 ---
 
 
-##### add_object `Gogs\API\Request\Tokens`
+##### add_object `git\API\Request\Tokens`
 ```php
 protected function add_object(iterable $obj);
 ```
@@ -2047,7 +2047,7 @@ Returns: array
 ---
 
 
-##### get `Gogs\API\Request\Tokens`
+##### get `git\API\Request\Tokens`
 ```php
 public function get(string $s);
 ```
@@ -2065,7 +2065,7 @@ Returns: object
 ---
 
 
-##### search `Gogs\API\Request\Tokens`
+##### search `git\API\Request\Tokens`
 ```php
 public function search(array $params = array(), bool $strict = false);
 ```
@@ -2089,16 +2089,16 @@ Parameters
 |array|$params   |Parameters                                            |
 |bool  |$strict   |Turn search into AND-ing, require match in each field.|
 
-Returns: [true](#true-gogsapirequest)
+Returns: [true](#true-gitapirequest)
 
 Throws: 
 
-* [SearchParamException](#searchparamexception-gogsapirequestexception "Exception: Gogs\API\Request\Exception\SearchParamException")
+* [SearchParamException](#searchparamexception-gitapirequestexception "Exception: git\API\Request\Exception\SearchParamException")
 
 ---
 
 
-##### sort_by `Gogs\API\Request\Tokens`
+##### sort_by `git\API\Request\Tokens`
 ```php
 public function sort_by(int $flag = Collection::SORT_INDEX);
 ```
@@ -2109,16 +2109,16 @@ Parameters
 |---   |---       |---          |
 |int   |$flag     |Sorting flag|
 
-Returns: [Collection](#collection-gogslib)
+Returns: [Collection](#collection-gitlib)
 
 ---
 
 
-### User `Gogs\API\Request`
+### User `git\API\Request`
 
 
-* Class extends [Gogs\API\Request\Base](#base-gogsapirequest)
-* Class implements[Gogs\API\Request\RequestInterface](#requestinterface-gogsapirequest)
+* Class extends [git\API\Request\Base](#base-gitapirequest)
+* Class implements[git\API\Request\RequestInterface](#requestinterface-gitapirequest)
 
 Stores user data and methods related to a single user.
 
@@ -2135,21 +2135,21 @@ A user can also list it's repos and organizations.
 
 |Name                                              |Return                          |Access   |Description                                    |
 |:---                                              |:---                            |:---     |:---                                           |
-|[__construct](#__construct-gogsapirequestuser)    |                                |public   | Initialize an user object.                    |
-|[set_scope](#set_scope-gogsapirequestuser)        |bool                            |protected|                                               |
-|[authenticated](#authenticated-gogsapirequestuser)|bool                            |public   | Returns if the user is the authenticated user.|
-|[repos](#repos-gogsapirequestuser)                |[Repos](#repos-gogsapirequest)  |public   | Returns every repo under user.                |
-|[repo](#repo-gogsapirequestuser)                  |[Repo](#repo-gogsapirequest)    |public   | Return a single repo.                         |
-|[organizations](#organizations-gogsapirequestuser)|[Orgs](#orgs-gogsapirequest)    |public   | Return every organization under user.         |
-|[orgs](#orgs-gogsapirequestuser)                  |                                |public   |                                               |
-|[organization](#organization-gogsapirequestuser)  |[Org](#org-gogsapirequest)      |public   | Return a single organization.                 |
-|[org](#org-gogsapirequestuser)                    |                                |public   |                                               |
-|[create](#create-gogsapirequestuser)              |bool                            |public   | Create a new user.                            |
-|[tokens](#tokens-gogsapirequestuser)              |[Tokens](#tokens-gogsapirequest)|public   | Returns user tokens                           |
+|[__construct](#__construct-gitapirequestuser)    |                                |public   | Initialize an user object.                    |
+|[set_scope](#set_scope-gitapirequestuser)        |bool                            |protected|                                               |
+|[authenticated](#authenticated-gitapirequestuser)|bool                            |public   | Returns if the user is the authenticated user.|
+|[repos](#repos-gitapirequestuser)                |[Repos](#repos-gitapirequest)  |public   | Returns every repo under user.                |
+|[repo](#repo-gitapirequestuser)                  |[Repo](#repo-gitapirequest)    |public   | Return a single repo.                         |
+|[organizations](#organizations-gitapirequestuser)|[Orgs](#orgs-gitapirequest)    |public   | Return every organization under user.         |
+|[orgs](#orgs-gitapirequestuser)                  |                                |public   |                                               |
+|[organization](#organization-gitapirequestuser)  |[Org](#org-gitapirequest)      |public   | Return a single organization.                 |
+|[org](#org-gitapirequestuser)                    |                                |public   |                                               |
+|[create](#create-gitapirequestuser)              |bool                            |public   | Create a new user.                            |
+|[tokens](#tokens-gitapirequestuser)              |[Tokens](#tokens-gitapirequest)|public   | Returns user tokens                           |
 
 #### Method details
 
-##### __construct `Gogs\API\Request\User`
+##### __construct `git\API\Request\User`
 ```php
 public function __construct(string $api_url, string $api_token, string $user = "");
 ```
@@ -2166,7 +2166,7 @@ Parameters
 ---
 
 
-##### set_scope `Gogs\API\Request\User`
+##### set_scope `git\API\Request\User`
 ```php
 protected function set_scope(string $method);
 ```
@@ -2181,13 +2181,13 @@ Returns: bool
 
 Throws: 
 
-* [InvalidMethodRequest](#invalidmethodrequest-gogsapirequestexception "Exception: Gogs\API\Request\Exception\InvalidMethodRequest")
-* [RequestErrorException](#requesterrorexception-gogsapirequestexception "Exception: Gogs\API\Request\Exception\RequestErrorException")
+* [InvalidMethodRequest](#invalidmethodrequest-gitapirequestexception "Exception: git\API\Request\Exception\InvalidMethodRequest")
+* [RequestErrorException](#requesterrorexception-gitapirequestexception "Exception: git\API\Request\Exception\RequestErrorException")
 
 ---
 
 
-##### authenticated `Gogs\API\Request\User`
+##### authenticated `git\API\Request\User`
 ```php
 public function authenticated();
 ```
@@ -2199,19 +2199,19 @@ Returns: bool
 ---
 
 
-##### repos `Gogs\API\Request\User`
+##### repos `git\API\Request\User`
 ```php
 public function repos();
 ```
  Returns every repo under user.
 
 
-Returns: [Repos](#repos-gogsapirequest)
+Returns: [Repos](#repos-gitapirequest)
 
 ---
 
 
-##### repo `Gogs\API\Request\User`
+##### repo `git\API\Request\User`
 ```php
 public function repo(string $name);
 ```
@@ -2226,31 +2226,31 @@ Parameters
 |---   |---       |---          |
 |string|$name     |Repo name    |
 
-Returns: [Repo](#repo-gogsapirequest)
+Returns: [Repo](#repo-gitapirequest)
 
 ---
 
 
-##### organizations `Gogs\API\Request\User`
+##### organizations `git\API\Request\User`
 ```php
 public function organizations();
 ```
  Return every organization under user.
 
 
-Returns: [Orgs](#orgs-gogsapirequest)
+Returns: [Orgs](#orgs-gitapirequest)
 
 ---
 
 
-##### orgs `Gogs\API\Request\User`
+##### orgs `git\API\Request\User`
 ```php
 public function orgs();
 ```
 ---
 
 
-##### organization `Gogs\API\Request\User`
+##### organization `git\API\Request\User`
 ```php
 public function organization(string $name);
 ```
@@ -2265,12 +2265,12 @@ Parameters
 |---   |---       |---              |
 |string|$name     |Organization name|
 
-Returns: [Org](#org-gogsapirequest)
+Returns: [Org](#org-gitapirequest)
 
 ---
 
 
-##### org `Gogs\API\Request\User`
+##### org `git\API\Request\User`
 ```php
 public function org(string $name);
 ```
@@ -2283,7 +2283,7 @@ Parameters
 ---
 
 
-##### create `Gogs\API\Request\User`
+##### create `git\API\Request\User`
 ```php
 public function create(... $args);
 ```
@@ -2313,7 +2313,7 @@ Returns: bool
 ---
 
 
-##### tokens `Gogs\API\Request\User`
+##### tokens `git\API\Request\User`
 ```php
 public function tokens(string $password);
 ```
@@ -2326,36 +2326,36 @@ Parameters
 |---   |---       |---                    |
 |string|$password|User personal password.|
 
-Returns: [Tokens](#tokens-gogsapirequest)
+Returns: [Tokens](#tokens-gitapirequest)
 
 ---
 
 
-### Users `Gogs\API\Request`
+### Users `git\API\Request`
 
 
-* Class extends [Gogs\API\Request\Collection](#collection-gogsapirequest)
+* Class extends [git\API\Request\Collection](#collection-gitapirequest)
 * Class implements
-	* [Gogs\Lib\ArrayIterator](#arrayiterator-gogslib)
-	* [Gogs\API\Request\RequestInterface](#requestinterface-gogsapirequest)
+	* [git\Lib\ArrayIterator](#arrayiterator-gitlib)
+	* [git\API\Request\RequestInterface](#requestinterface-gitapirequest)
 
-Returns one or more users in the Gogs installation,
+Returns one or more users in the git installation,
 depending on the called method.
 
 #### Methods
 
 |Name                                         |Return                           |Access   |Description                                                                     |
 |:---                                         |:---                             |:---     |:---                                                                            |
-|[set_scope](#set_scope-gogsapirequestusers)  |bool                             |protected|                                                                                |
-|[create](#create-gogsapirequestusers)        |bool                             |public   | Returns a new user object. If argumentsis specified the user will be "created".|
-|[get](#get-gogsapirequestusers)              |object                           |public   | Return a user by username.                                                     |
-|[search](#search-gogsapirequestusers)        |[true](#true-gogsapirequest)     |public   | Search for an user                                                             |
-|[sort_by](#sort_by-gogsapirequestusers)      |[Collection](#collection-gogslib)|public   |                                                                                |
-|[add_object](#add_object-gogsapirequestusers)|array                            |protected|                                                                                |
+|[set_scope](#set_scope-gitapirequestusers)  |bool                             |protected|                                                                                |
+|[create](#create-gitapirequestusers)        |bool                             |public   | Returns a new user object. If argumentsis specified the user will be "created".|
+|[get](#get-gitapirequestusers)              |object                           |public   | Return a user by username.                                                     |
+|[search](#search-gitapirequestusers)        |[true](#true-gitapirequest)     |public   | Search for an user                                                             |
+|[sort_by](#sort_by-gitapirequestusers)      |[Collection](#collection-gitlib)|public   |                                                                                |
+|[add_object](#add_object-gitapirequestusers)|array                            |protected|                                                                                |
 
 #### Method details
 
-##### set_scope `Gogs\API\Request\Users`
+##### set_scope `git\API\Request\Users`
 ```php
 protected function set_scope(string $method);
 ```
@@ -2371,7 +2371,7 @@ Returns: bool
 ---
 
 
-##### create `Gogs\API\Request\Users`
+##### create `git\API\Request\Users`
 ```php
 public function create(... $args);
 ```
@@ -2393,7 +2393,7 @@ Returns: bool
 ---
 
 
-##### get `Gogs\API\Request\Users`
+##### get `git\API\Request\Users`
 ```php
 public function get(string $s);
 ```
@@ -2411,7 +2411,7 @@ Returns: object
 ---
 
 
-##### search `Gogs\API\Request\Users`
+##### search `git\API\Request\Users`
 ```php
 public function search(array $params = array(), bool $strict = false);
 ```
@@ -2435,16 +2435,16 @@ Parameters
 |array|$params   |Parameters                                            |
 |bool  |$strict   |Turn search into AND-ing, require match in each field.|
 
-Returns: [true](#true-gogsapirequest)
+Returns: [true](#true-gitapirequest)
 
 Throws: 
 
-* [SearchParamException](#searchparamexception-gogsapirequestexception "Exception: Gogs\API\Request\Exception\SearchParamException")
+* [SearchParamException](#searchparamexception-gitapirequestexception "Exception: git\API\Request\Exception\SearchParamException")
 
 ---
 
 
-##### sort_by `Gogs\API\Request\Users`
+##### sort_by `git\API\Request\Users`
 ```php
 public function sort_by(int $flag = Collection::SORT_INDEX);
 ```
@@ -2455,12 +2455,12 @@ Parameters
 |---   |---       |---          |
 |int   |$flag     |Sorting flag|
 
-Returns: [Collection](#collection-gogslib)
+Returns: [Collection](#collection-gitlib)
 
 ---
 
 
-##### add_object `Gogs\API\Request\Users`
+##### add_object `git\API\Request\Users`
 ```php
 protected function add_object(iterable $obj);
 ```
@@ -2477,7 +2477,7 @@ Returns: array
 
 ## Interfaces
 
-### RequestInterface `Gogs\API\Request`
+### RequestInterface `git\API\Request`
 
 Request interface, used by any kind of request object.
 
@@ -2485,15 +2485,15 @@ Request interface, used by any kind of request object.
 
 |Name                                            |Return|Access|Description           |
 |:---                                            |:---  |:---  |:---                  |
-|[load](#load-gogsapirequestrequestinterface)    |object|public| Load object.         |
-|[get](#get-gogsapirequestrequestinterface)      |object|public| Get by identifier    |
-|[create](#create-gogsapirequestrequestinterface)|bool  |public| Create object        |
-|[patch](#patch-gogsapirequestrequestinterface)  |bool  |public| Patch (update) object|
-|[delete](#delete-gogsapirequestrequestinterface)|bool  |public| Delete object        |
+|[load](#load-gitapirequestrequestinterface)    |object|public| Load object.         |
+|[get](#get-gitapirequestrequestinterface)      |object|public| Get by identifier    |
+|[create](#create-gitapirequestrequestinterface)|bool  |public| Create object        |
+|[patch](#patch-gitapirequestrequestinterface)  |bool  |public| Patch (update) object|
+|[delete](#delete-gitapirequestrequestinterface)|bool  |public| Delete object        |
 
 #### Method details
 
-##### load `Gogs\API\Request\RequestInterface`
+##### load `git\API\Request\RequestInterface`
 ```php
 public function load(bool $force = false);
 ```
@@ -2511,7 +2511,7 @@ Returns: object
 ---
 
 
-##### get `Gogs\API\Request\RequestInterface`
+##### get `git\API\Request\RequestInterface`
 ```php
 public function get(string $s);
 ```
@@ -2529,7 +2529,7 @@ Returns: object
 ---
 
 
-##### create `Gogs\API\Request\RequestInterface`
+##### create `git\API\Request\RequestInterface`
 ```php
 public function create(... $args);
 ```
@@ -2547,7 +2547,7 @@ Returns: bool
 ---
 
 
-##### patch `Gogs\API\Request\RequestInterface`
+##### patch `git\API\Request\RequestInterface`
 ```php
 public function patch();
 ```
@@ -2559,7 +2559,7 @@ Returns: bool
 ---
 
 
-##### delete `Gogs\API\Request\RequestInterface`
+##### delete `git\API\Request\RequestInterface`
 ```php
 public function delete();
 ```
@@ -2570,11 +2570,11 @@ Returns: bool
 
 ---
 
-# Gogs\API\Request\Exception
+# git\API\Request\Exception
 
 ## Exceptions
 
-### InvalidMethodRequestException `Gogs\API\Request\Exception`
+### InvalidMethodRequestException `git\API\Request\Exception`
 
 
 * Class extends [Exception](https://www.google.no/search?q=Exception)
@@ -2583,7 +2583,7 @@ Thrown whenever a class that inherits the base-class
 is used wrong (e.g tries to create on a loaded object)
 
 
-### NotImplementedException `Gogs\API\Request\Exception`
+### NotImplementedException `git\API\Request\Exception`
 
 
 * Class extends [BadMethodCallException](https://www.google.no/search?q=BadMethodCallException)
@@ -2592,7 +2592,7 @@ Thrown when the requested method for a class isn't
 implemented.
 
 
-### RequestErrorException `Gogs\API\Request\Exception`
+### RequestErrorException `git\API\Request\Exception`
 
 
 * Class extends [Exception](https://www.google.no/search?q=Exception)
@@ -2601,21 +2601,21 @@ Typically thrown when needed data to build the query
 is missing.
 
 
-### SearchParamException `Gogs\API\Request\Exception`
+### SearchParamException `git\API\Request\Exception`
 
 
 * Class extends [Exception](https://www.google.no/search?q=Exception)
 
 Thrown when needed parameters for a search is missing.
 
-# Gogs\Lib
+# git\Lib
 
 ## Classes
 
-### Collection `Gogs\Lib`
+### Collection `git\Lib`
 
 
-* Class implements[Gogs\Lib\ArrayIterator](#arrayiterator-gogslib)
+* Class implements[git\Lib\ArrayIterator](#arrayiterator-gitlib)
 
 Base class for collections. Implements basic
 functions and typically used to return collections
@@ -2625,26 +2625,26 @@ which wont be a part of the "request package"
 
 |Name                                         |Return                           |Access|Description                      |
 |:---                                         |:---                             |:---  |:---                             |
-|[__construct](#__construct-gogslibcollection)|                                 |public|                                 |
-|[set](#set-gogslibcollection)                |                                 |public| Set value(e) to the collection.|
-|[by_key](#by_key-gogslibcollection)          |mixed                            |public|                                 |
-|[copy](#copy-gogslibcollection)              |[Colletion](#colletion-gogslib)  |public| Copy collection                 |
-|[all](#all-gogslibcollection)                |array                            |public|                                 |
-|[len](#len-gogslibcollection)                |int                              |public|                                 |
-|[next](#next-gogslibcollection)              |mixed                            |public|                                 |
-|[prev](#prev-gogslibcollection)              |mixed                            |public|                                 |
-|[current](#current-gogslibcollection)        |                                 |public|                                 |
-|[reset](#reset-gogslibcollection)            |mixed                            |public|                                 |
-|[sort](#sort-gogslibcollection)              |[Collection](#collection-gogslib)|public|                                 |
-|[filter](#filter-gogslibcollection)          |[Collection](#collection-gogslib)|public| Filter collection               |
-|[limit](#limit-gogslibcollection)            |[Collection](#collection-gogslib)|public|                                 |
-|[offset](#offset-gogslibcollection)          |[Collection](#collection-gogslib)|public|                                 |
-|[reverse](#reverse-gogslibcollection)        |[Collection](#collection-gogslib)|public|                                 |
-|[remove](#remove-gogslibcollection)          |bool                             |public| Remove an element in collection.|
+|[__construct](#__construct-gitlibcollection)|                                 |public|                                 |
+|[set](#set-gitlibcollection)                |                                 |public| Set value(e) to the collection.|
+|[by_key](#by_key-gitlibcollection)          |mixed                            |public|                                 |
+|[copy](#copy-gitlibcollection)              |[Colletion](#colletion-gitlib)  |public| Copy collection                 |
+|[all](#all-gitlibcollection)                |array                            |public|                                 |
+|[len](#len-gitlibcollection)                |int                              |public|                                 |
+|[next](#next-gitlibcollection)              |mixed                            |public|                                 |
+|[prev](#prev-gitlibcollection)              |mixed                            |public|                                 |
+|[current](#current-gitlibcollection)        |                                 |public|                                 |
+|[reset](#reset-gitlibcollection)            |mixed                            |public|                                 |
+|[sort](#sort-gitlibcollection)              |[Collection](#collection-gitlib)|public|                                 |
+|[filter](#filter-gitlibcollection)          |[Collection](#collection-gitlib)|public| Filter collection               |
+|[limit](#limit-gitlibcollection)            |[Collection](#collection-gitlib)|public|                                 |
+|[offset](#offset-gitlibcollection)          |[Collection](#collection-gitlib)|public|                                 |
+|[reverse](#reverse-gitlibcollection)        |[Collection](#collection-gitlib)|public|                                 |
+|[remove](#remove-gitlibcollection)          |bool                             |public| Remove an element in collection.|
 
 #### Method details
 
-##### __construct `Gogs\Lib\Collection`
+##### __construct `git\Lib\Collection`
 ```php
 public function __construct(array $arr = array());
 ```
@@ -2657,7 +2657,7 @@ Parameters
 ---
 
 
-##### set `Gogs\Lib\Collection`
+##### set `git\Lib\Collection`
 ```php
 public function set(mixed $val, mixed $key = null);
 ```
@@ -2676,7 +2676,7 @@ Parameters
 ---
 
 
-##### by_key `Gogs\Lib\Collection`
+##### by_key `git\Lib\Collection`
 ```php
 public function by_key(mixed $idx);
 ```
@@ -2692,19 +2692,19 @@ Returns: mixed
 ---
 
 
-##### copy `Gogs\Lib\Collection`
+##### copy `git\Lib\Collection`
 ```php
 public function copy();
 ```
  Copy collection
 
 
-Returns: [Colletion](#colletion-gogslib)
+Returns: [Colletion](#colletion-gitlib)
 
 ---
 
 
-##### all `Gogs\Lib\Collection`
+##### all `git\Lib\Collection`
 ```php
 public function all();
 ```
@@ -2714,7 +2714,7 @@ Returns: array
 ---
 
 
-##### len `Gogs\Lib\Collection`
+##### len `git\Lib\Collection`
 ```php
 public function len();
 ```
@@ -2724,7 +2724,7 @@ Returns: int
 ---
 
 
-##### next `Gogs\Lib\Collection`
+##### next `git\Lib\Collection`
 ```php
 public function next();
 ```
@@ -2734,7 +2734,7 @@ Returns: mixed
 ---
 
 
-##### prev `Gogs\Lib\Collection`
+##### prev `git\Lib\Collection`
 ```php
 public function prev();
 ```
@@ -2744,14 +2744,14 @@ Returns: mixed
 ---
 
 
-##### current `Gogs\Lib\Collection`
+##### current `git\Lib\Collection`
 ```php
 public function current();
 ```
 ---
 
 
-##### reset `Gogs\Lib\Collection`
+##### reset `git\Lib\Collection`
 ```php
 public function reset();
 ```
@@ -2761,7 +2761,7 @@ Returns: mixed
 ---
 
 
-##### sort `Gogs\Lib\Collection`
+##### sort `git\Lib\Collection`
 ```php
 public function sort(callable $f);
 ```
@@ -2772,12 +2772,12 @@ Parameters
 |---     |---       |---          |
 |callable|$f        |*None*       |
 
-Returns: [Collection](#collection-gogslib)
+Returns: [Collection](#collection-gitlib)
 
 ---
 
 
-##### filter `Gogs\Lib\Collection`
+##### filter `git\Lib\Collection`
 ```php
 public function filter(callable $f);
 ```
@@ -2790,12 +2790,12 @@ Parameters
 |---     |---       |---          |
 |callable|$f        |*None*       |
 
-Returns: [Collection](#collection-gogslib)
+Returns: [Collection](#collection-gitlib)
 
 ---
 
 
-##### limit `Gogs\Lib\Collection`
+##### limit `git\Lib\Collection`
 ```php
 public function limit(int $lim);
 ```
@@ -2806,12 +2806,12 @@ Parameters
 |---   |---       |---                     |
 |int   |$lim      |Maximum entries returned|
 
-Returns: [Collection](#collection-gogslib)
+Returns: [Collection](#collection-gitlib)
 
 ---
 
 
-##### offset `Gogs\Lib\Collection`
+##### offset `git\Lib\Collection`
 ```php
 public function offset(int $off);
 ```
@@ -2822,22 +2822,22 @@ Parameters
 |---   |---       |---                      |
 |int   |$off      |Offset from in collection|
 
-Returns: [Collection](#collection-gogslib)
+Returns: [Collection](#collection-gitlib)
 
 ---
 
 
-##### reverse `Gogs\Lib\Collection`
+##### reverse `git\Lib\Collection`
 ```php
 public function reverse();
 ```
 
-Returns: [Collection](#collection-gogslib)
+Returns: [Collection](#collection-gitlib)
 
 ---
 
 
-##### remove `Gogs\Lib\Collection`
+##### remove `git\Lib\Collection`
 ```php
 public function remove(mixed $any, bool $deep = true);
 ```
@@ -2863,7 +2863,7 @@ Returns: bool
 
 ## Interfaces
 
-### ArrayIterator `Gogs\Lib`
+### ArrayIterator `git\Lib`
 
 Interface to store one or more elements in array
 providing an iterator interface.
@@ -2872,23 +2872,23 @@ providing an iterator interface.
 
 |Name                                    |Return                           |Access|Description                            |
 |:---                                    |:---                             |:---  |:---                                   |
-|[current](#current-gogslibarrayiterator)|                                 |public| Get current element in collection.    |
-|[next](#next-gogslibarrayiterator)      |mixed                            |public| Get next element in collection.       |
-|[prev](#prev-gogslibarrayiterator)      |mixed                            |public| Return previous element in collection.|
-|[reset](#reset-gogslibarrayiterator)    |mixed                            |public| Reset collection (set array to head).|
-|[len](#len-gogslibarrayiterator)        |int                              |public| Return collection size.               |
-|[all](#all-gogslibarrayiterator)        |array                            |public| Return the whole colection.           |
-|[by_key](#by_key-gogslibarrayiterator)  |mixed                            |public| Get element by index key.             |
-|[copy](#copy-gogslibarrayiterator)      |[Colletion](#colletion-gogslib)  |public| Copy collection                       |
-|[limit](#limit-gogslibarrayiterator)    |[Collection](#collection-gogslib)|public| Limit until in collection             |
-|[offset](#offset-gogslibarrayiterator)  |[Collection](#collection-gogslib)|public| Get from offset collection            |
-|[reverse](#reverse-gogslibarrayiterator)|[Collection](#collection-gogslib)|public| Reverse the collection                |
-|[sort](#sort-gogslibarrayiterator)      |[Collection](#collection-gogslib)|public| Sort collection                       |
-|[filter](#filter-gogslibarrayiterator)  |[Collection](#collection-gogslib)|public| Filter collection                     |
+|[current](#current-gitlibarrayiterator)|                                 |public| Get current element in collection.    |
+|[next](#next-gitlibarrayiterator)      |mixed                            |public| Get next element in collection.       |
+|[prev](#prev-gitlibarrayiterator)      |mixed                            |public| Return previous element in collection.|
+|[reset](#reset-gitlibarrayiterator)    |mixed                            |public| Reset collection (set array to head).|
+|[len](#len-gitlibarrayiterator)        |int                              |public| Return collection size.               |
+|[all](#all-gitlibarrayiterator)        |array                            |public| Return the whole colection.           |
+|[by_key](#by_key-gitlibarrayiterator)  |mixed                            |public| Get element by index key.             |
+|[copy](#copy-gitlibarrayiterator)      |[Colletion](#colletion-gitlib)  |public| Copy collection                       |
+|[limit](#limit-gitlibarrayiterator)    |[Collection](#collection-gitlib)|public| Limit until in collection             |
+|[offset](#offset-gitlibarrayiterator)  |[Collection](#collection-gitlib)|public| Get from offset collection            |
+|[reverse](#reverse-gitlibarrayiterator)|[Collection](#collection-gitlib)|public| Reverse the collection                |
+|[sort](#sort-gitlibarrayiterator)      |[Collection](#collection-gitlib)|public| Sort collection                       |
+|[filter](#filter-gitlibarrayiterator)  |[Collection](#collection-gitlib)|public| Filter collection                     |
 
 #### Method details
 
-##### current `Gogs\Lib\ArrayIterator`
+##### current `git\Lib\ArrayIterator`
 ```php
 public function current();
 ```
@@ -2897,7 +2897,7 @@ public function current();
 ---
 
 
-##### next `Gogs\Lib\ArrayIterator`
+##### next `git\Lib\ArrayIterator`
 ```php
 public function next();
 ```
@@ -2909,7 +2909,7 @@ Returns: mixed
 ---
 
 
-##### prev `Gogs\Lib\ArrayIterator`
+##### prev `git\Lib\ArrayIterator`
 ```php
 public function prev();
 ```
@@ -2921,7 +2921,7 @@ Returns: mixed
 ---
 
 
-##### reset `Gogs\Lib\ArrayIterator`
+##### reset `git\Lib\ArrayIterator`
 ```php
 public function reset();
 ```
@@ -2933,7 +2933,7 @@ Returns: mixed
 ---
 
 
-##### len `Gogs\Lib\ArrayIterator`
+##### len `git\Lib\ArrayIterator`
 ```php
 public function len();
 ```
@@ -2945,7 +2945,7 @@ Returns: int
 ---
 
 
-##### all `Gogs\Lib\ArrayIterator`
+##### all `git\Lib\ArrayIterator`
 ```php
 public function all();
 ```
@@ -2957,7 +2957,7 @@ Returns: array
 ---
 
 
-##### by_key `Gogs\Lib\ArrayIterator`
+##### by_key `git\Lib\ArrayIterator`
 ```php
 public function by_key(mixed $idx);
 ```
@@ -2975,19 +2975,19 @@ Returns: mixed
 ---
 
 
-##### copy `Gogs\Lib\ArrayIterator`
+##### copy `git\Lib\ArrayIterator`
 ```php
 public function copy();
 ```
  Copy collection
 
 
-Returns: [Colletion](#colletion-gogslib)
+Returns: [Colletion](#colletion-gitlib)
 
 ---
 
 
-##### limit `Gogs\Lib\ArrayIterator`
+##### limit `git\Lib\ArrayIterator`
 ```php
 public function limit(int $lim);
 ```
@@ -3000,12 +3000,12 @@ Parameters
 |---   |---       |---                     |
 |int   |$lim      |Maximum entries returned|
 
-Returns: [Collection](#collection-gogslib)
+Returns: [Collection](#collection-gitlib)
 
 ---
 
 
-##### offset `Gogs\Lib\ArrayIterator`
+##### offset `git\Lib\ArrayIterator`
 ```php
 public function offset(int $off);
 ```
@@ -3018,24 +3018,24 @@ Parameters
 |---   |---       |---                      |
 |int   |$off      |Offset from in collection|
 
-Returns: [Collection](#collection-gogslib)
+Returns: [Collection](#collection-gitlib)
 
 ---
 
 
-##### reverse `Gogs\Lib\ArrayIterator`
+##### reverse `git\Lib\ArrayIterator`
 ```php
 public function reverse();
 ```
  Reverse the collection
 
 
-Returns: [Collection](#collection-gogslib)
+Returns: [Collection](#collection-gitlib)
 
 ---
 
 
-##### sort `Gogs\Lib\ArrayIterator`
+##### sort `git\Lib\ArrayIterator`
 ```php
 public function sort(callable $f);
 ```
@@ -3048,12 +3048,12 @@ Parameters
 |---     |---       |---          |
 |callable|$f        |*None*       |
 
-Returns: [Collection](#collection-gogslib)
+Returns: [Collection](#collection-gitlib)
 
 ---
 
 
-##### filter `Gogs\Lib\ArrayIterator`
+##### filter `git\Lib\ArrayIterator`
 ```php
 public function filter(callable $f);
 ```
@@ -3066,15 +3066,15 @@ Parameters
 |---     |---       |---          |
 |callable|$f        |*None*       |
 
-Returns: [Collection](#collection-gogslib)
+Returns: [Collection](#collection-gitlib)
 
 ---
 
-# Gogs\Lib\Curl
+# git\Lib\Curl
 
 ## Traits
 
-### Client `Gogs\Lib\Curl`
+### Client `git\Lib\Curl`
 
 A trait used for every class referencing the api-url and token.
 
@@ -3082,16 +3082,16 @@ A trait used for every class referencing the api-url and token.
 
 |Name                                             |Return|Access       |Description                                                                                                                                                                                                                                                                              |
 |:---                                             |:---  |:---         |:---                                                                                                                                                                                                                                                                                     |
-|[basic](#basic-gogslibcurlclient)                |      |protected    | Basic sets the user for basic HTTP-authentication.                                                                                                                                                                                                                                      |
-|[set_param](#set_param-gogslibcurlclient)        |      |protected    | Set param into array                                                                                                                                                                                                                                                                    |
-|[filter_params](#filter_params-gogslibcurlclient)|      |protected    | Filter out NULL values from parameters.                                                                                                                                                                                                                                                 |
-|[method](#method-gogslibcurlclient)              |int   |protected    | Initializes a curl request of different kinds, dependingon the specified method. This can be                                                                                                                                                                                            |
-|[authorized](#authorized-gogslibcurlclient)      |bool  |protected    | Checks if the user is authorized for the scope. Shouldn'tbe used frequently. One test for one scope should be enough,but if you know for sure thats you're programming with theuse of an authorized user you should leave this and justhandle the NotAuthorizedExeption whenever thrown.|
-|[get_log](#get_log-gogslibcurlclient)            |array|public static| Returns log entries for the client.                                                                                                                                                                                                                                                     |
+|[basic](#basic-gitlibcurlclient)                |      |protected    | Basic sets the user for basic HTTP-authentication.                                                                                                                                                                                                                                      |
+|[set_param](#set_param-gitlibcurlclient)        |      |protected    | Set param into array                                                                                                                                                                                                                                                                    |
+|[filter_params](#filter_params-gitlibcurlclient)|      |protected    | Filter out NULL values from parameters.                                                                                                                                                                                                                                                 |
+|[method](#method-gitlibcurlclient)              |int   |protected    | Initializes a curl request of different kinds, dependingon the specified method. This can be                                                                                                                                                                                            |
+|[authorized](#authorized-gitlibcurlclient)      |bool  |protected    | Checks if the user is authorized for the scope. Shouldn'tbe used frequently. One test for one scope should be enough,but if you know for sure thats you're programming with theuse of an authorized user you should leave this and justhandle the NotAuthorizedExeption whenever thrown.|
+|[get_log](#get_log-gitlibcurlclient)            |array|public static| Returns log entries for the client.                                                                                                                                                                                                                                                     |
 
 #### Method details
 
-##### basic `Gogs\Lib\Curl\Client`
+##### basic `git\Lib\Curl\Client`
 ```php
 protected function basic(string $user);
 ```
@@ -3106,7 +3106,7 @@ Parameters
 ---
 
 
-##### set_param `Gogs\Lib\Curl\Client`
+##### set_param `git\Lib\Curl\Client`
 ```php
 protected function set_param(array $params, string $param_name, array $args, int $index, string $type, mixed $default = null, callable $f = null);
 ```
@@ -3132,7 +3132,7 @@ Parameters
 ---
 
 
-##### filter_params `Gogs\Lib\Curl\Client`
+##### filter_params `git\Lib\Curl\Client`
 ```php
 protected function filter_params(array $params);
 ```
@@ -3149,7 +3149,7 @@ Parameters
 ---
 
 
-##### method `Gogs\Lib\Curl\Client`
+##### method `git\Lib\Curl\Client`
 ```php
 protected function method(string $method, string $req, string $scope, array $params, bool $ret);
 ```
@@ -3175,7 +3175,7 @@ Returns: int
 ---
 
 
-##### authorized `Gogs\Lib\Curl\Client`
+##### authorized `git\Lib\Curl\Client`
 ```php
 protected function authorized(string $scope = "");
 ```
@@ -3196,12 +3196,12 @@ Returns: bool
 
 Throws: 
 
-* [Not](#not-gogslibcurl "Exception: Gogs\Lib\Curl\Not")
+* [Not](#not-gitlibcurl "Exception: git\Lib\Curl\Not")
 
 ---
 
 
-##### get_log `Gogs\Lib\Curl\Client`
+##### get_log `git\Lib\Curl\Client`
 ```php
 public static function get_log();
 ```
@@ -3212,11 +3212,11 @@ Returns: array
 
 ---
 
-# Gogs\Lib\Curl\Exception
+# git\Lib\Curl\Exception
 
 ## Exceptions
 
-### HTTPUnexpectedResponse `Gogs\Lib\Curl\Exception`
+### HTTPUnexpectedResponse `git\Lib\Curl\Exception`
 
 
 * Class extends [Exception](https://www.google.no/search?q=Exception)
@@ -3227,13 +3227,13 @@ Defines an unexpected response.
 
 |Name                                                                  |Return|Access|Description                                           |
 |:---                                                                  |:---  |:---  |:---                                                  |
-|[__construct](#__construct-gogslibcurlexceptionhttpunexpectedresponse)|      |public| Sets the exceptions.                                 |
-|[__toString](#__tostring-gogslibcurlexceptionhttpunexpectedresponse)  |string|public| Visual representation of the exception.              |
-|[getResponse](#getresponse-gogslibcurlexceptionhttpunexpectedresponse)|string|public| Get the actual response from the body or the request.|
+|[__construct](#__construct-gitlibcurlexceptionhttpunexpectedresponse)|      |public| Sets the exceptions.                                 |
+|[__toString](#__tostring-gitlibcurlexceptionhttpunexpectedresponse)  |string|public| Visual representation of the exception.              |
+|[getResponse](#getresponse-gitlibcurlexceptionhttpunexpectedresponse)|string|public| Get the actual response from the body or the request.|
 
 #### Method details
 
-##### __construct `Gogs\Lib\Curl\Exception\HTTPUnexpectedResponse`
+##### __construct `git\Lib\Curl\Exception\HTTPUnexpectedResponse`
 ```php
 public function __construct(string $message, int $code, Exception $previous = null);
 ```
@@ -3250,7 +3250,7 @@ Parameters
 ---
 
 
-##### __toString `Gogs\Lib\Curl\Exception\HTTPUnexpectedResponse`
+##### __toString `git\Lib\Curl\Exception\HTTPUnexpectedResponse`
 ```php
 public function __toString();
 ```
@@ -3262,7 +3262,7 @@ Returns: string
 ---
 
 
-##### getResponse `Gogs\Lib\Curl\Exception\HTTPUnexpectedResponse`
+##### getResponse `git\Lib\Curl\Exception\HTTPUnexpectedResponse`
 ```php
 public function getResponse();
 ```
@@ -3274,10 +3274,10 @@ Returns: string
 ---
 
 
-### NotAuthorizedException `Gogs\Lib\Curl\Exception`
+### NotAuthorizedException `git\Lib\Curl\Exception`
 
 
-* Class extends [Gogs\Lib\Curl\Exception\HTTPUnexpectedResponse](#httpunexpectedresponse-gogslibcurlexception)
+* Class extends [git\Lib\Curl\Exception\HTTPUnexpectedResponse](#httpunexpectedresponse-gitlibcurlexception)
 
 When the request fails because of an unauthorized token,
 this is thrown instead.
@@ -3286,11 +3286,11 @@ this is thrown instead.
 
 |Name                                                                  |Return|Access|Description          |
 |:---                                                                  |:---  |:---  |:---                 |
-|[__construct](#__construct-gogslibcurlexceptionnotauthorizedexception)|      |public| Sets the exceptions.|
+|[__construct](#__construct-gitlibcurlexceptionnotauthorizedexception)|      |public| Sets the exceptions.|
 
 #### Method details
 
-##### __construct `Gogs\Lib\Curl\Exception\NotAuthorizedException`
+##### __construct `git\Lib\Curl\Exception\NotAuthorizedException`
 ```php
 public function __construct(string $message, int $code = 401, Exception $previous = null);
 ```
@@ -3306,6 +3306,4 @@ Parameters
 |Exception|$previous|*None*       |
 ---
 
-
- - Genetated using Sami and the [Sami/Twig Markdown Extension](https://git.giaever.org/joachimmg/sami-markdown)
-
+LICENSED UNDER **MIT** by [Clipped Code](https://clippedcode.com/).

@@ -1,6 +1,6 @@
 <?php 
 
-namespace Gogs\API\Request {
+namespace Clippedcode\GitClient\API\Request {
 
     /** 
      * Stores data and methods related to a single repository.

@@ -1,6 +1,6 @@
 <?php 
 
-namespace Gogs\Lib {
+namespace Clippedcode\GitClient\Lib {
     /**
      * Interface to store one or more elements in array
      * providing an iterator interface.

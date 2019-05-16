@@ -1,6 +1,6 @@
 <?php
 
-namespace Gogs\API\Request {
+namespace Clippedcode\GitClient\API\Request {
 
     /** 
      * Collection is a collection of data of one type.
@@ -9,7 +9,7 @@ namespace Gogs\API\Request {
      * @author Joachim M. Giaever (joachim[]giaever.org)
      * @version 0.1.3
      */
-    abstract class Collection extends Base implements \Gogs\Lib\ArrayIterator {
+    abstract class Collection extends Base implements \Clippedcode\GitClient\Lib\ArrayIterator {
 
         private $objs;
 

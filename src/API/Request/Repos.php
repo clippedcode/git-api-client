@@ -1,6 +1,6 @@
 <?php 
 
-namespace Gogs\API\Request {
+namespace Clippedcode\GitClient\API\Request {
 
     /** 
      * Repos is a collection of repos.

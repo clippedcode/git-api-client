@@ -1,6 +1,6 @@
 <?php 
 
-namespace Gogs\API\Request {
+namespace Clippedcode\GitClient\API\Request {
 
     /**
      * Base class for request types.
@@ -20,7 +20,7 @@ namespace Gogs\API\Request {
         protected $loaded = false;
         protected $scope;
 
-        use \Gogs\Lib\Curl\Client {
+        use \Clippedcode\GitClient\Lib\Curl\Client {
             get as private mget;
             post as private mpost;
             delete as private mdelete;

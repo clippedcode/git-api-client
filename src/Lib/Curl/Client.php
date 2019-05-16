@@ -1,6 +1,6 @@
 <?php 
 
-namespace Gogs\Lib\Curl {
+namespace Clippedcode\GitClient\Lib\Curl {
 
     /** 
      * A trait used for every class referencing the api-url and token.

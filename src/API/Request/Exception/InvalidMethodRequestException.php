@@ -1,5 +1,5 @@
 <?php
-namespace Gogs\API\Request\Exception {
+namespace Clippedcode\GitClient\API\Request\Exception {
     
     /** 
      * Thrown whenever a class that inherits the base-class
