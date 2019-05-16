@@ -2,7 +2,7 @@
 
 **Current Status: `ALPHA.1`**
 
-This is an API Client for [GOGS GIT server](https://gogs.io). This Repository is based on [Joachim M. Giaever's `gogs-php-api-client`](https://git.giaever.org/joachimmg/gogs-php-api-client). This Repository retains the Orignal Author of the Project.
+This is an API Client for GIT server. This Repository is based on [Joachim M. Giaever's `gogs-php-api-client`](https://git.giaever.org/joachimmg/gogs-php-api-client). This Repository retains the Orignal Author of the Project.
 > **Q:** What is GOGS?
 >
 > **A:** GOGS is a Painless self-hosted Git Server written in GO Programming Language. It is so light weight that it can even run on 512mb RAM in a Docker Instance. It has a Front-end Interface as well as REST API (`v1`) that this client consumes.
@@ -22,7 +22,7 @@ This is an API Client for [GOGS GIT server](https://gogs.io). This Repository is
 composer require clippedcode/gogs-client:dev-master
 ```
 
-> For Laravel, take a Look at this [Laravel Bridge Package](https://github.com/clippedcode/gogs-api-bridge)
+> For Laravel, take a Look at this [Laravel Bridge Package](https://github.com/clippedcode/git-api-bridge)
 
 ## Usage
 
